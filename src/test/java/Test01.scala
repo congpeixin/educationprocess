@@ -20,15 +20,17 @@ object Test01 {
 
 //    val Array(brokers, topics) = args
 
-    val brokers = "process1.pd.dp:6667,process6.pd.dp:6667,process7.pd.dp:6667"
-    val topics = "skurawdataonline_new02"
+    val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
+    val topics = "test02"
 
     // Create context with 2 second batch interval
-    val sparkConf = new SparkConf().setAppName("simhash_keyword")
+    val sparkConf = new SparkConf().setAppName("simhash_keyword").setMaster("local[2]")
     //加入解决序列化问题
     sparkConf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     sparkConf.set("spark.streaming.kafka.maxRatePerPartition", "5")
     val ssc = new StreamingContext(sparkConf, Seconds(5))
+    ssc.sparkContext.setLogLevel("ERROR")
+
 
     // Create direct kafka stream with brokers and topics
     val topicsSet = topics.split(",").toSet
@@ -44,7 +46,7 @@ object Test01 {
 
           //simhash去重
           //HanLp提取关键词
-
+          println(line)
 
         })
       })
