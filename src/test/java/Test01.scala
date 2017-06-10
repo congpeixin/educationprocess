@@ -21,7 +21,7 @@ object Test01 {
 //    val Array(brokers, topics) = args
 
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
-    val topics = "test02"
+    val topics = "test01"
 
     // Create context with 2 second batch interval
     val sparkConf = new SparkConf().setAppName("simhash_keyword").setMaster("local[2]")
@@ -35,9 +35,9 @@ object Test01 {
     // Create direct kafka stream with brokers and topics
     val topicsSet = topics.split(",").toSet
     val kafkaParams = Map[String, String]("metadata.broker.list" -> brokers,"serializer.class" -> "kafka.serializer.StringEncoder", "auto.offset.reset" -> "smallest")
-    val kafkaDStream = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](
-      ssc, kafkaParams, topicsSet)
+    val kafkaDStream = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
 
+    //不转换编码
     val dataDStream = kafkaDStream.foreachRDD(rdd =>{
       rdd.foreachPartition(part =>{
         part.foreach(line =>{
@@ -46,12 +46,33 @@ object Test01 {
 
           //simhash去重
           //HanLp提取关键词
-          println(line)
+          println(line._2)
 
         })
       })
 
     })
+
+
+    //转换编码
+//    val msg = kafkaDStream.map(msg =>CharSetUtil.decodeUnicode(msg._2)).foreachRDD(rdd =>{
+//      rdd.foreachPartition(part =>{
+//        part.foreach(line =>{
+//          //val dataAlias = addFieldAlias.FieldAlias(JSONObject.fromObject(line._2)) //第一步：对原始数据中的color,print,brand,material添加别名
+//          //val dataAlias = addFieldAlias.FieldAlias(new JSONObject(line._2))
+//          //simhash去重
+//
+//          val strJson = new JSONObject(line)
+//          val content = strJson.get("crawl_time")
+//          //HanLp提取关键词
+//          println(content.getClass.getName)
+//        })
+//      })
+//    })
+
+
+
+
     // Start the computation
     ssc.start()
     ssc.awaitTermination()

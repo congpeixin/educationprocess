@@ -40,46 +40,46 @@ object streamingProcess {
     val kafkaDStream = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
 
 
-    val dataRDD = kafkaDStream.map(json => {
-      val jsonObj = new JSONObject(json._2).
-//      (jsonObj.get("site_name"),jsonObj.get("post_title"),jsonObj.get("post_url"),jsonObj.getString("content_text").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""),jsonObj.get("content_html"),jsonObj.getInt("crawl_time"),jsonObj.getString("type"),jsonObj.getString("module"),HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replace("[","").replace("]",""))
-    }).filter(a => a.)
+//    val dataRDD = kafkaDStream.map(json => {
+//      val jsonObj = new JSONObject(json._2).
+////      (jsonObj.get("site_name"),jsonObj.get("post_title"),jsonObj.get("post_url"),jsonObj.getString("content_text").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""),jsonObj.get("content_html"),jsonObj.getInt("crawl_time"),jsonObj.getString("type"),jsonObj.getString("module"),HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replace("[","").replace("]",""))
+//    }).filter(a => a.)
 
 
 //    val commerceRDD = dataRDD.filter(field => new JSONObject(field) )
 //    val conferenceRDD = dataRDD.filter(file => file._7 == "conference")
 
-    commerceRDD.foreachRDD(rdd => {
-      rdd.foreachPartition(iterator => {
-        var conn: Connection = null
-        var ps: PreparedStatement = null
-        val sql: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords) VALUES (?,?,?,?,?,?,?,?,?)"
-
-        try {
-          conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
-          iterator.foreach(line=>{
-            ps = conn.prepareStatement(sql)
-            ps.setString(1,line._1.toString)
-            ps.setString(2, line._2.toString)
-            ps.setString(3,line._3.toString)
-            ps.setString(4,line._4.toString)
-            ps.setString(5,line._5.toString)
-            ps.setInt(6,line._6)
-            ps.setString(7,line._7.toString)
-            ps.setString(8,line._8.toString)
-            ps.setString(9,line._9.toString)
-            ps.executeUpdate()
-          })
-        } catch {
-          case e: Exception =>  println(e.printStackTrace())
-        }finally {
-          if (ps != null)
-            ps.close()
-          if (conn != null)
-            conn.close()
-        }
-      })
-    })
+//    commerceRDD.foreachRDD(rdd => {
+//      rdd.foreachPartition(iterator => {
+//        var conn: Connection = null
+//        var ps: PreparedStatement = null
+//        val sql: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords) VALUES (?,?,?,?,?,?,?,?,?)"
+//
+//        try {
+//          conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
+//          iterator.foreach(line=>{
+//            ps = conn.prepareStatement(sql)
+//            ps.setString(1,line._1.toString)
+//            ps.setString(2, line._2.toString)
+//            ps.setString(3,line._3.toString)
+//            ps.setString(4,line._4.toString)
+//            ps.setString(5,line._5.toString)
+//            ps.setInt(6,line._6)
+//            ps.setString(7,line._7.toString)
+//            ps.setString(8,line._8.toString)
+//            ps.setString(9,line._9.toString)
+//            ps.executeUpdate()
+//          })
+//        } catch {
+//          case e: Exception =>  println(e.printStackTrace())
+//        }finally {
+//          if (ps != null)
+//            ps.close()
+//          if (conn != null)
+//            conn.close()
+//        }
+//      })
+//    })
 
 
 
