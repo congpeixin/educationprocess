@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -234,6 +235,33 @@
     <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-xml_2.11:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-parser-combinators_2.11:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.kafka:kafka-clients:0.8.2.1" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.heidata.nlp:aluextrator:2.24">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/aluextrator-1.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: cn.edu.hfut.dmic:WebCollector:2.24">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/webcollector-2.24-bin/WebCollector-2.24.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: org.wltea.analyzer:IKAnalyzer:2012FF_u1">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/IKAnalyzer2012FF_u1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: com.google.guava:guava:15.0" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:c3p0:0.9.5.2" level="project" />

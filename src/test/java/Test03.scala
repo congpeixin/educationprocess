@@ -1,6 +1,7 @@
 import java.sql.{DriverManager, PreparedStatement, Connection}
 
 
+import DB.data2MySQL
 import com.hankcs.hanlp.HanLP
 import kafka.serializer.StringDecoder
 import org.apache.log4j.{Logger, Level}
@@ -16,7 +17,7 @@ object Test03 {
   Logger.getLogger("org").setLevel(Level.ERROR)
   def main(args: Array[String]) {
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
-    val topics = "test03"
+    val topics = "test04"
 
     // Create context with 2 second batch interval
     val sparkConf = new SparkConf().setAppName("simhash_keyword").setMaster("local[2]")
@@ -42,49 +43,22 @@ object Test03 {
       rdd.foreachPartition(partion =>{
         partion.foreach(json =>{
           val jsonObj = new JSONObject(json._2)
+          if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null)||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null)){
 
-          if (jsonObj.get("type") == "commerce"){
-            //        (jsonObj.get("site_name"),jsonObj.get("post_title"),jsonObj.get("post_url"),jsonObj.getString("content_text").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""),jsonObj.get("content_html"),jsonObj.getInt("crawl_time"),jsonObj.getString("type"),jsonObj.getString("module"),HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replace("[","").replace("]",""))
+            //去重simhash
+            //与已经抓取的文章对比,判断是否有相似文章,as为当前抓取的文章，simURL为库中存在相似文章的url
+            //simURL == null 文章不重复
 
-            val sql: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords) VALUES (?,?,?,?,?,?,?,?,?)"
-
-
-            conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
-
-            ps = conn.prepareStatement(sql)
-            ps.setString(1,jsonObj.get("site_name").toString)
-            ps.setString(2, jsonObj.get("post_title").toString.replace(" ",""))
-            ps.setString(3,jsonObj.get("post_url").toString)
-            ps.setString(4,jsonObj.getString("content_text").replaceAll("[\\x{10000}-\\x{10FFFF}]", "").toString)
-            ps.setString(5,jsonObj.get("content_html").toString.replaceAll("[\\x{10000}-\\x{10FFFF}]", ""))
-            ps.setInt(6,jsonObj.getInt("crawl_time"))
-            ps.setString(7,jsonObj.getString("type"))
-            ps.setString(8,jsonObj.get("module").toString)
-            ps.setString(9,HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replace("[","").replace("]",""))
-            ps.executeUpdate()
-
-            println("---------------------------------------------------"+jsonObj)
+              if (jsonObj.get("type") == "commerce"){
+//                data2MySQL.toMySQL_commerce(jsonObj)
+                println("---------------------------------------------------"+jsonObj)
+              }
+              else {
+//                data2MySQL.toMySQL_conference(jsonObj)
+                println("*****************************************************"+jsonObj)
+              }
 
           }
-          else {
-            //        (jsonObj.get("site_name"),jsonObj.get("post_title"),jsonObj.get("post_url"),jsonObj.getString("conference_address").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""),jsonObj.get("conference_time"),jsonObj.getInt("crawl_time"),jsonObj.getString("type"),jsonObj.getString("module"))
-            val sql: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
-            conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
-
-            ps = conn.prepareStatement(sql)
-            ps.setString(1,jsonObj.get("site_name").toString)
-            ps.setString(2, jsonObj.get("post_title").toString.replace(" ","").replaceAll ("\\\\r\\\\n", ""))
-            ps.setString(3,jsonObj.get("post_url").toString)
-            ps.setString(4,jsonObj.getString("conference_address").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""))//conference_address
-            ps.setString(5,jsonObj.getString("conference_time"))//conference_time
-            ps.setInt(6,jsonObj.getInt("crawl_time"))
-            ps.setString(7,jsonObj.getString("type"))
-            ps.setString(8,jsonObj.get("module").toString)
-            ps.executeUpdate()
-            println("*****************************************************"+jsonObj)
-
-          }
-
 
         })
       })
