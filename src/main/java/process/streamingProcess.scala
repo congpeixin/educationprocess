@@ -1,6 +1,8 @@
 import java.sql.{DriverManager, PreparedStatement, Connection}
 
 
+import DB.data2MySQL
+import SimHash.SimHashTest
 import com.hankcs.hanlp.HanLP
 import kafka.serializer.StringDecoder
 import org.apache.log4j.{Logger, Level}
@@ -12,11 +14,11 @@ import org.json.JSONObject
 /**
   * Created by cluster on 2017/6/11.
   */
-object Test03 {
+object streamingProcess extends Serializable  {
   Logger.getLogger("org").setLevel(Level.ERROR)
   def main(args: Array[String]) {
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
-    val topics = "test03"
+    val topics = "test04"
 
     // Create context with 2 second batch interval
     val sparkConf = new SparkConf().setAppName("simhash_keyword").setMaster("local[2]")
@@ -28,30 +30,28 @@ object Test03 {
 
     // Create direct kafka stream with brokers and topics
     val topicsSet = topics.split(",").toSet
-    val kafkaParams = Map[String, String]("metadata.broker.list" -> brokers,"serializer.class" -> "kafka.serializer.StringEncoder", "auto.offset.reset" -> "smallest")
+    val kafkaParams = Map[String, String]("metadata.broker.list" -> brokers,"serializer.class" -> "kafka .serializer.StringEncoder", "auto.offset.reset" -> "smallest")
     val kafkaDStream = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
-
-    //    StreamingExamples.setStreamingLogLevels()
 
     var conn: Connection = null
     var ps: PreparedStatement = null
-    //    val dataRDD = kafkaDStream.map(json => {
-    //      val jsonObj = json._2 })
-
+    val sql_commerce: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords,abstract) VALUES (?,?,?,?,?,?,?,?,?,?)"
+    val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
+    //    StreamingExamples.setStreamingLogLevels()
+    val simClass = new SimHashTest
+    //向数据库插入文章数据
     kafkaDStream.foreachRDD(rdd =>{
       rdd.foreachPartition(partion =>{
+        conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
         partion.foreach(json =>{
           val jsonObj = new JSONObject(json._2)
-
-          if (jsonObj.get("type") == "commerce"){
-            //        (jsonObj.get("site_name"),jsonObj.get("post_title"),jsonObj.get("post_url"),jsonObj.getString("content_text").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""),jsonObj.get("content_html"),jsonObj.getInt("crawl_time"),jsonObj.getString("type"),jsonObj.getString("module"),HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replace("[","").replace("]",""))
-
-            val sql: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords) VALUES (?,?,?,?,?,?,?,?,?)"
-
-
-            conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
-
-            ps = conn.prepareStatement(sql)
+//            val simURL = simClass.checkSimilarArticle(jsonObj)
+            //去重simhash
+            //与已经抓取的文章对比,判断是否有相似文章,as为当前抓取的文章，simURL为库中存在相似文章的url
+            //simURL == null 文章不重复
+//        if (simURL == null){
+          if (jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != ""){
+            ps = conn.prepareStatement(sql_commerce)
             ps.setString(1,jsonObj.get("site_name").toString)
             ps.setString(2, jsonObj.get("post_title").toString.replace(" ",""))
             ps.setString(3,jsonObj.get("post_url").toString)
@@ -61,17 +61,12 @@ object Test03 {
             ps.setString(7,jsonObj.getString("type"))
             ps.setString(8,jsonObj.get("module").toString)
             ps.setString(9,HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replace("[","").replace("]",""))
+            ps.setString(10,HanLP.extractSummary(jsonObj.getString("content_text"), 5).toString)
             ps.executeUpdate()
-
             println("---------------------------------------------------"+jsonObj)
-
           }
-          else {
-            //        (jsonObj.get("site_name"),jsonObj.get("post_title"),jsonObj.get("post_url"),jsonObj.getString("conference_address").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""),jsonObj.get("conference_time"),jsonObj.getInt("crawl_time"),jsonObj.getString("type"),jsonObj.getString("module"))
-            val sql: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
-            conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
-
-            ps = conn.prepareStatement(sql)
+          else if (jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != ""){
+            ps = conn.prepareStatement(sql_conference)
             ps.setString(1,jsonObj.get("site_name").toString)
             ps.setString(2, jsonObj.get("post_title").toString.replace(" ","").replaceAll ("\\\\r\\\\n", ""))
             ps.setString(3,jsonObj.get("post_url").toString)
@@ -82,13 +77,15 @@ object Test03 {
             ps.setString(8,jsonObj.get("module").toString)
             ps.executeUpdate()
             println("*****************************************************"+jsonObj)
-
           }
-
-
+//        }
         })
       })
     })
+
+
+
+
     ssc.start()
     ssc.awaitTermination()
 
