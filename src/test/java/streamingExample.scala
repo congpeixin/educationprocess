@@ -6,7 +6,7 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 /**
   * Created by cluster on 2017/6/11.
   */
-object streamingTest {
+object streamingExample {
   //Logger.getLogger("org").setLevel(Level.ERROR)
   //  logInfo("test log")
   def main(args: Array[String]) {
@@ -17,7 +17,7 @@ object streamingTest {
     //    val ssc = new StreamingContext(conf, Durations.seconds(5))
     val ssc = new StreamingContext(conf,Seconds(2))
     //    val topics = Set("skurawdataonline_new01")
-    val topics = Set("test01")
+    val topics = Set("test04")
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
 
     val kafkaParams = Map[String, String](

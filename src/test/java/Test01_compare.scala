@@ -13,7 +13,7 @@ import org.json.JSONObject
   *
   * 统计关键词做wordcount 但是这种方式不行，最终结果不能累加
   */
-object Test01 {
+object Test01_compare {
 
   def main(args: Array[String]) {
 //    if (args.length < 2) {
