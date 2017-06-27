@@ -1,7 +1,9 @@
-import java.sql.{DriverManager, PreparedStatement, Connection}
+import java.sql.{Statement, DriverManager, PreparedStatement, Connection}
 
+import cn.datapark.process.education.SimHash.{SimHashTest, ArticleExtractTopoConfig, ConfigUtil}
 import com.hankcs.hanlp.HanLP
 import kafka.serializer.StringDecoder
+import org.apache.log4j.{Level, Logger}
 
 import org.apache.spark.streaming._
 import org.apache.spark.streaming.kafka._
@@ -11,77 +13,95 @@ import org.json.JSONObject
 /**
   * Created by cluster on 2017/6/6.
   *
-  * 统计关键词做wordcount 但是这种方式不行，最终结果不能累加
+  * 对conference 数据进行search方式去重
   */
 object Test01_compare {
-
+  Logger.getLogger("org").setLevel(Level.ERROR)
+  //ConfigUtil.initConfig(classOf[ArticleContentExtractBolt].getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
+  ConfigUtil.initConfig(Test01_compare.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
+  val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance
   def main(args: Array[String]) {
-//    if (args.length < 2) {
-//           |  <brokers> is a list of one or more Kafka brokers
-//           |  <topics> is a list of one or more kafka topics to consume from
-//    }
-
-    //    Test01.setStreamingLogLevels()
-
-//    val Array(brokers, topics) = args
-
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
     val topics = "test04"
 
     // Create context with 2 second batch interval
-    val sparkConf = new SparkConf().setAppName("simhash_keyword").setMaster("local[2]")
+    val sparkConf = new SparkConf().setAppName("educationProcess").setMaster("local[2]")
+    //    val sparkConf = new SparkConf().setAppName("educationProcess")
     //加入解决序列化问题
     sparkConf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     sparkConf.set("spark.streaming.kafka.maxRatePerPartition", "5")
     val ssc = new StreamingContext(sparkConf, Seconds(5))
-    ssc.sparkContext.setLogLevel("ERROR")
-
-
     // Create direct kafka stream with brokers and topics
     val topicsSet = topics.split(",").toSet
     val kafkaParams = Map[String, String]("metadata.broker.list" -> brokers,"serializer.class" -> "kafka.serializer.StringEncoder", "auto.offset.reset" -> "smallest")
     val kafkaDStream = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
+    //    StreamingExamples.setStreamingLogLevels()
+    var conn: Connection = null
+    var ps: PreparedStatement = null
+    val statement: Statement = null
 
-    val lines = kafkaDStream.map(line =>new JSONObject(line._2)).filter(jsonObj => (jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != ""))
-    val keywordStr = lines.map(jsonObj => HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replaceAll("[\\[\\]]",""))
+    val simClass = new SimHashTest
 
-    val words = keywordStr.flatMap(_.split(","))
-    val wordCounts = words.map(x => (x, 1)).reduceByKey(_ + _)
-    wordCounts.foreachRDD(rdd =>{
-      def func(records: Iterator[(String,Int)]) {
-        //Connect the mysql
-        var conn: Connection = null
-        var stmt: PreparedStatement = null
-        try {
-          val url = "jdbc:mysql://192.168.39.18:3306/test?useUnicode=true&characterEncoding=UTF-8"
-          val user = "root"
-          val password = "123456"
-          conn = DriverManager.getConnection(url, user, password)
-          records.foreach(word => {
-            val sql = "insert into keyword (word,num) values (?,?)"
-            stmt = conn.prepareStatement(sql)
-            stmt.setString(1, word._1)
-            stmt.setInt(2, word._2)
-            stmt.executeUpdate()
-          })
-        } catch {
-          case e: Exception => e.printStackTrace()
-        } finally {
-          if (stmt != null) {
-            stmt.close()
+    val sql_commerce: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords,abstract) VALUES (?,?,?,?,?,?,?,?,?,?)"
+    val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
+    kafkaDStream.foreachRDD(rdd =>{
+      rdd.foreachPartition(partion =>{
+        conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
+        var simURL = ""
+        partion.foreach(json =>{
+          val jsonObj = new JSONObject(json._2)
+          if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "" )||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
+
+
+            if (jsonObj.get("type") == "commerce"){
+              simURL = simClass.checkSimilarArticle(jsonObj)
+              if (simURL == null){
+                ps = conn.prepareStatement(sql_commerce)
+                ps.setString(1,jsonObj.get("site_name").toString)
+                ps.setString(2, jsonObj.get("post_title").toString.replace(" ",""))
+                ps.setString(3,jsonObj.get("post_url").toString)
+                ps.setString(4,jsonObj.getString("content_text").replaceAll("[\\x{10000}-\\x{10FFFF}]", "").toString)
+                ps.setString(5,jsonObj.get("content_html").toString.replaceAll("[\\x{10000}-\\x{10FFFF}]", ""))
+                ps.setInt(6,jsonObj.getInt("crawl_time"))
+                ps.setString(7,jsonObj.getString("type"))
+                ps.setString(8,jsonObj.get("module").toString)
+                ps.setString(9,HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replaceAll("[\\[\\]]","").replace(" ",""))
+                ps.setString(10,HanLP.extractSummary(jsonObj.getString("content_text"), 5).toString)
+                ps.executeUpdate()
+                println("---------------------------------------------------"+jsonObj)
+              }else{
+                println(jsonObj.get("post_title")+"type = commerce文章存在")
+              }
+            }
+            //这个类别的文章不用simhash去重，直接去查表里是否有相应的post_titile
+            else if (jsonObj.get("type") == "conference"){
+              val conditions1: String = jsonObj.getString("post_title")
+              val conditions2: String = jsonObj.getString("conference_address")
+              val sql_conditions = "select * from conference where post_title = '"+conditions1+"'"+" AND conference_address = '"+conditions2+"'"
+              ps = conn.prepareStatement(sql_conditions)
+              val resultSet = ps.executeQuery()
+              if (resultSet.next() == false){
+                ps = conn.prepareStatement(sql_conference)
+                ps.setString(1,jsonObj.get("site_name").toString)
+                ps.setString(2, jsonObj.get("post_title").toString.replace(" ","").replaceAll ("\\\\r\\\\n", ""))
+                ps.setString(3,jsonObj.get("post_url").toString)
+                ps.setString(4,jsonObj.getString("conference_address").replaceAll("[\\x{10000}-\\x{10FFFF}]", "").replaceAll("乘车路线.*",""))//conference_address
+                ps.setString(5,jsonObj.getString("conference_time"))//conference_time
+                ps.setInt(6,jsonObj.getInt("crawl_time"))
+                ps.setString(7,jsonObj.getString("type"))
+                ps.setString(8,jsonObj.get("module").toString)
+                ps.executeUpdate()
+                println("*****************************************************"+jsonObj)
+              }else{
+                println(jsonObj.get("post_title")+"type = conference文章存在")
+              }
+            }
           }
-          if (conn != null) {
-            conn.close()
-          }
-        }
-      }
-      val repartitionedRDD = rdd.repartition(3)
-      repartitionedRDD.foreachPartition(func)
+        })
+      })
     })
-
-    // Start the computation
     ssc.start()
     ssc.awaitTermination()
-  }
 
+  }
 }
