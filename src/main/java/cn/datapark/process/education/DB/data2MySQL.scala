@@ -1,4 +1,4 @@
-package DB
+package cn.datapark.process.education.DB
 
 import java.sql.{DriverManager, PreparedStatement, Connection}
 
