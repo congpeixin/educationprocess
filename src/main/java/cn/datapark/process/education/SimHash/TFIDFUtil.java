@@ -1,4 +1,4 @@
-package SimHash;
+package cn.datapark.process.education.SimHash;
 
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;

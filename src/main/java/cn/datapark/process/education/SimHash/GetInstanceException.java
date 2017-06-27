@@ -1,4 +1,4 @@
-package SimHash;
+package cn.datapark.process.education.SimHash;
 
 /**
  * Created by eason on 16/1/22.

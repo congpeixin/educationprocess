@@ -1,4 +1,4 @@
-package SimHash;
+package cn.datapark.process.education.SimHash;
 
 import org.apache.log4j.Logger;
 

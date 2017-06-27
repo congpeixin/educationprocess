@@ -1,4 +1,4 @@
-package SimHash;
+package cn.datapark.process.education.SimHash;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
