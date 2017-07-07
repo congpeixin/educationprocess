@@ -49,8 +49,6 @@ object streamingProcess extends Serializable  {
         partion.foreach(json =>{
           val jsonObj = new JSONObject(json._2)
           if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "" )||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
-
-
             if (jsonObj.get("type") == "commerce"){
               simURL = simClass.checkSimilarArticle(jsonObj)
               if (simURL == null){
@@ -66,41 +64,30 @@ object streamingProcess extends Serializable  {
                 ps.setString(9,HanLP.extractKeyword(jsonObj.getString("content_text"), 10).toString.replaceAll("[\\[\\]]","").replace(" ",""))
                 ps.setString(10,HanLP.extractSummary(jsonObj.getString("content_text"), 5).toString)
                 ps.executeUpdate()
-                println("---------------------------------------------------"+jsonObj)
+                println("commerce："+jsonObj)
               }else{
                 println(jsonObj.get("post_title")+"type = commerce文章存在")
               }
             }
-              //这个类别的文章不用simhash去重，直接去查表里是否有相应的post_titile
+              //这个类别的文章不用simhash去重，直接给定 post_title和conference_address 去查是否有这条数据
             else if (jsonObj.get("type") == "conference"){
-              val conditions: String = jsonObj.getString("post_title")
-              ps = conn.prepareStatement("select * from conference where post_title = '"+conditions+"'")
+              val conditions1: String = jsonObj.getString("post_title")
+              val conditions2: String = jsonObj.getString("conference_address")
+              val sql_conditions = "select * from conference where post_title = '"+conditions1+"'"+" AND conference_address = '"+conditions2+"'"
+              ps = conn.prepareStatement(sql_conditions)
               val resultSet = ps.executeQuery()
               if (resultSet.next() == false){
                 ps = conn.prepareStatement(sql_conference)
                 ps.setString(1,jsonObj.get("site_name").toString)
                 ps.setString(2, jsonObj.get("post_title").toString.replace(" ","").replaceAll ("\\\\r\\\\n", ""))
                 ps.setString(3,jsonObj.get("post_url").toString)
-                ps.setString(4,jsonObj.getString("conference_address").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""))//conference_address
+                ps.setString(4,jsonObj.getString("conference_address").replaceAll("[\\x{10000}-\\x{10FFFF}]", "").replaceAll("乘车路线.*",""))//conference_address
                 ps.setString(5,jsonObj.getString("conference_time"))//conference_time
                 ps.setInt(6,jsonObj.getInt("crawl_time"))
                 ps.setString(7,jsonObj.getString("type"))
                 ps.setString(8,jsonObj.get("module").toString)
                 ps.executeUpdate()
-                println("*****************************************************"+jsonObj)
-              }else if(resultSet.next() == true && resultSet.getString("conference_address") != jsonObj.getString("conference_address")){
-//                println(jsonObj.get("post_title")+"type = conference文章存在")
-                ps = conn.prepareStatement(sql_conference)
-                ps.setString(1,jsonObj.get("site_name").toString)
-                ps.setString(2, jsonObj.get("post_title").toString.replace(" ","").replaceAll ("\\\\r\\\\n", ""))
-                ps.setString(3,jsonObj.get("post_url").toString)
-                ps.setString(4,jsonObj.getString("conference_address").replaceAll("[\\x{10000}-\\x{10FFFF}]", ""))//conference_address
-                ps.setString(5,jsonObj.getString("conference_time"))//conference_time
-                ps.setInt(6,jsonObj.getInt("crawl_time"))
-                ps.setString(7,jsonObj.getString("type"))
-                ps.setString(8,jsonObj.get("module").toString)
-                ps.executeUpdate()
-                println("*****************************************************"+jsonObj)
+                println("conference："+jsonObj)
               }else{
                 println(jsonObj.get("post_title")+"type = conference文章存在")
               }
