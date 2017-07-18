@@ -31,6 +31,11 @@ object streamingExample {
         println(msg._2)
       })
     })
+
+
+
+
+
     ssc.start()
     //等待
     ssc.awaitTermination()
