@@ -6,6 +6,7 @@ import org.wltea.analyzer.core.Lexeme;
 import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -287,11 +288,13 @@ public class NewsSummary {
     private Map<Integer,Double> MMR(List<Entry<Integer, Double>> sortedSentList){
         //System.out.println("MMR In...");
         double[][] simSentArray=sentJSimilarity();//所有句子的相似度
-        Map<Integer,Double> sortedLinkedSent=new LinkedHashMap<Integer,Double>();
+//        Map<Integer,Double> sortedLinkedSent=new LinkedHashMap<Integer,Double>();
+        Map<Integer,Double> sortedLinkedSent=new ConcurrentHashMap<Integer,Double>();
         for(Entry<Integer, Double> entry:sortedSentList){
             sortedLinkedSent.put(entry.getKey(),entry.getValue());
         }
-        Map<Integer,Double> MMR_SentScore=new LinkedHashMap<Integer,Double>();//最终的得分（句子编号与得分）
+//        Map<Integer,Double> MMR_SentScore=new LinkedHashMap<Integer,Double>();//最终的得分（句子编号与得分）
+        Map<Integer,Double> MMR_SentScore=new ConcurrentHashMap<Integer,Double>();//最终的得分（句子编号与得分）
         Entry<Integer, Double> Entry=sortedSentList.get(0);//第一步先将最高分的句子加入
         MMR_SentScore.put(Entry.getKey(), Entry.getValue());
         boolean flag=true;
