@@ -2,15 +2,15 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by cluster on 2017/7/14.
  */
 public class BosonSummary {
     public static final String SENTIMENT_URL =
-            "http://api.bosonnlp.com/summary/analysis";
+            "http://api.bosonnlp.com/keywords/analysis";
     public static final String YOUR_API_TOKEN = "lYmPEise.16235.45u_K2lJN5HU";
     public static void main(String[] args) throws JSONException, UnirestException,
             java.io.IOException
@@ -32,13 +32,13 @@ public class BosonSummary {
                 "                \"他了解这群人的嗨点在哪。原因很简单，他身于其中，而品牌通常从代理公司或咨询公司的报告中了解年轻人罢了。\" +\n" +
                 "                \"————————————————欢迎长按下方二维码，关注界面营销频道微信公众号“看你卖”（kannimai）。\" +\n" +
                 "                \"更多专业报道，请点击下载“界面新闻”APP0牙韩翔界面编辑关注作者取消关注私信\"}" ;
-//        String body = new JSONArray(new String[]{content}).toString();
+        String body = new JSONArray(new String[]{content}).toString();
 //        String body = content;
-          JSONObject contentJson = new JSONObject(content);
+//          JSONObject contentJson = new JSONObject(content);
         HttpResponse<JsonNode> jsonResponse = Unirest.post(SENTIMENT_URL)
                 .header("Accept", "application/json")
                 .header("X-Token", YOUR_API_TOKEN)
-                .body(contentJson)
+                .body(body)
                 .asJson();
 
         System.out.println(jsonResponse.getBody());

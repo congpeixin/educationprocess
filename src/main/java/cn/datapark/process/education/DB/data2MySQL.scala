@@ -2,9 +2,10 @@ package cn.datapark.process.education.DB
 
 import java.sql.{DriverManager, PreparedStatement, Connection}
 
+import HanLPProcess.HanLP
 import cn.datapark.process.education.Summary
 import cn.datapark.process.education.Summary.NewsSummary
-import com.hankcs.hanlp.HanLP
+
 import org.apache.log4j.{Level, Logger}
 
 //import org.apache.log4j.spi.LoggerFactory
@@ -21,6 +22,7 @@ object data2MySQL {
   Logger.getLogger("org").setLevel(Level.ERROR)
   val logger = LoggerFactory.getLogger(this.getClass)
   val summary = new NewsSummary
+
   def toMySQL_commerce(conn:Connection,sql:String,jsonObj:JSONObject): Unit ={
     if (jsonObj.getString("content_text") != null){
       try{
