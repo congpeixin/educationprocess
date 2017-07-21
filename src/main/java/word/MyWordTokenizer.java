@@ -12,7 +12,6 @@ import org.apdplat.word.segmentation.Word;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.Queue;
 import java.util.concurrent.LinkedTransferQueue;
 
