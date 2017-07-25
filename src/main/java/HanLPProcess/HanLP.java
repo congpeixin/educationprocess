@@ -613,4 +613,11 @@ public class HanLP
         // The actual length of the summary generated may be short than the required length, but never longer;
         return TextRankSentence.getSummary(document, max_length);
     }
+
+    public static void main(String[]args){
+        List<String> list= extractKeyword("随着人口老龄化、二孩时代的到来，我国从事家政服务人员已达2000万，北京等一线城市更是供不应求，因此入职门槛低与高薪成为家政行业的最大特点",5);
+        String[] keyWord = list.toArray(new String[list.size()]);
+
+    }
+
 }

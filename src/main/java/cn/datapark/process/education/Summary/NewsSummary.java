@@ -17,7 +17,8 @@ import java.util.regex.Pattern;
  * @author yan.shi
  *@date： 日期：2017-4-20 时间：上午9:45:21
  */
-public class NewsSummary {
+public class NewsSummary implements Serializable {
+
     int N=50;//保留关键词数量
     int CLUSTER_THRESHOLD=5;//关键词间的距离阀值
     int TOP_SENTENCES=3;//前top-n句子
@@ -31,6 +32,7 @@ public class NewsSummary {
      * @param path
      */
     private void loadStopWords(String path){
+
         BufferedReader br=null;
         try{
             br=new BufferedReader(new InputStreamReader(new FileInputStream(path),"utf-8"));
@@ -171,6 +173,8 @@ public class NewsSummary {
      * @return
      */
     public String summarize(String text,String style){
+        //添加 看看比较器是否抛异常
+        System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
         //System.out.println("summarize in...");
         try {
             if(!styleSet.contains(style) || text.trim().equals(""))
@@ -207,7 +211,7 @@ public class NewsSummary {
 
         Map<Integer,Double> scoresLinkedMap=scoreSentences(sentencesList,wordsList);//返回的得分,从第一句开始,句子编号的自然顺序
         List<Entry<Integer, Double>> sortedSentList=new ArrayList<Entry<Integer,Double>>(scoresLinkedMap.entrySet());//按得分从高到底排序好的句子，句子编号与得分
-        //System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
+        System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
         Collections.sort(sortedSentList, new Comparator<Entry<Integer, Double>>(){
 
             public int compare(Entry<Integer, Double> o1,Entry<Integer, Double> o2) {
@@ -271,7 +275,7 @@ public class NewsSummary {
         }
         StringBuilder sb=new StringBuilder();
         for(int  index:keySentence.keySet())
-            sb.append(keySentence.get(index));
+            sb.append(keySentence.get(index)+"&&");
         //System.out.println("summarize out...");
         return sb.toString();
     }
@@ -377,12 +381,20 @@ public class NewsSummary {
 //        System.out.println("meanstd利用均值和标准差过滤非重要句子: "+keySentences);
 
         //default默认返回排序得分top-n句子
-        String keySentences_1=summary.summarize(text2, "default");
-        System.out.println("default默认返回排序得分top-n句子: "+keySentences_1);
+//        String keySentences_1=summary.summarize(text2, "default");
+//        System.out.println("default默认返回排序得分top-n句子: "+keySentences_1);
 
         //MMR,利用最大边缘相关，返回前top-n句子
-        String keySentences_2=summary.summarize(text2, "MMR");
-        System.out.println("MMR,利用最大边缘相关，返回前top-n句子: "+keySentences_2);
+//        String keySentences_2=summary.summarize(text2, "MMR");
+//        String[] str = keySentences_2.split("&&");
+//        List<String> list = Arrays.asList(str);
+//
+//        String[] result = (String[])list.toArray();
+
+        Arrays.asList(summary.summarize(text2, "MMR").split("&&")).toString();
+
+
+        System.out.println("MMR,利用最大边缘相关，返回前top-n句子: "+Arrays.asList(summary.summarize(text2, "MMR").split("&&")).toString());
 
 
 //        String keySentences_3=summary.summarize(keySentences_2, "meanstd");
