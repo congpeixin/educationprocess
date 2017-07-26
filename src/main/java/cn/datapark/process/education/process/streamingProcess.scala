@@ -51,13 +51,13 @@ object streamingProcess extends Serializable  {
           var simURL = ""
           partion.foreach(json =>{
             val jsonObj = new JSONObject(json._2)
-            if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "" )||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
+            if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "" && judgeLenght(jsonObj.get("content_text").toString))||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
               if (jsonObj.get("type") == "commerce"){
                 simURL = simClass.checkSimilarArticle(jsonObj)
                 if (simURL == null){
                   //存入MySQL
                   data2MySQL.toMySQL_commerce(conn,sql_commerce,jsonObj)
-//                  ES.storageArticle(jsonObj)
+//                ES.storageArticle(jsonObj)
                   println("commerce："+jsonObj.get("post_title"))
                 }else{
                   println(jsonObj.get("post_title")+"type = commerce文章存在")
@@ -88,4 +88,24 @@ object streamingProcess extends Serializable  {
     ssc.awaitTermination()
 
   }
+
+  /**
+    * 判断文章中，可以分割为摘要的标点个数，如果小于等于3，则过滤掉
+    * @param str
+    * @return
+    */
+  def judgeLenght(str: String): Boolean ={
+    val  istr = str.length()
+//    println("str的长度是：" + istr)
+    val  str1 = str.replaceAll("[!?。！？;；]", "")
+    val istr1 = str1.length()
+//    System.out.println("str1的长度是：" + istr1)
+//    System.out.println("标点符号的个数是：" + (istr - istr1))
+    val result = istr - istr1
+    if (result <= 3) false else true
+  }
+
+
+
+
 }
