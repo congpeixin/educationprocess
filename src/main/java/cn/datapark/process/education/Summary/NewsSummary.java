@@ -273,9 +273,10 @@ public class NewsSummary implements Serializable {
                     break;
             }
         }
+        //<span class="abstract"></span>
         StringBuilder sb=new StringBuilder();
         for(int  index:keySentence.keySet())
-            sb.append(keySentence.get(index)+"&&");
+            sb.append("<span class=\"abstract\">"+keySentence.get(index)+"</span>");
         //System.out.println("summarize out...");
         return sb.toString();
     }
