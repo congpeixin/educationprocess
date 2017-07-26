@@ -31,7 +31,7 @@ public class IndexArticle implements Serializable {
         String content =jsonObj.getString("content_text").replaceAll("[\\x{10000}-\\x{10FFFF}]", "").toString();//内容
         String time = ChangeTime(new Long(jsonObj.getInt("crawl_time")));//时间  格式yyyy-MM-dd
         String[] keyWord = keywordList.toArray(new String[keywordList.size()]);// 关键字
-        String core = summary.summarize(jsonObj.getString("content_text").replaceFirst(".*本文.*转载.*?[。]","").replaceFirst("除非注明.*",""), "MMR");//核心提示
+        String core = summary.summarize(jsonObj.getString("content_text").replaceFirst(".*本文.*转载.*?[。]","").replaceFirst("除非注明.*","").replaceFirst("更多专业报道.*", ""), "MMR");//核心提示
 
         String id = Base64.getUrlEncoder().encodeToString(title.getBytes());
         articleInfoMap.put("title",title);

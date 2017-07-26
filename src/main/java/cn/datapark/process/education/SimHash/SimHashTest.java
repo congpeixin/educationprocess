@@ -75,7 +75,7 @@ public class SimHashTest implements Serializable {
         }
 
         if (json.has("content_text") && json.get("content_text")!= null){
-             content = json.get("content_text").toString().replaceAll("[\\x{10000}-\\x{10FFFF}]", "");
+             content = json.get("content_text").toString().replaceAll("[\\x{10000}-\\x{10FFFF}]", "").replaceFirst("更多专业报道.*","").replaceFirst(".*本文.*转载.*?[。]","").replaceFirst("除非注明.*","");
         }else if (json.has("conference_time") && json.get("post_title")!= null){
             content = json.get("post_title").toString().replace(" ","").replaceAll ("\\\\r\\\\n", "");
         }

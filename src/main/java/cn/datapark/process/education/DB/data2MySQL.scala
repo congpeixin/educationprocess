@@ -37,7 +37,7 @@ object data2MySQL {
         ps.setString(7,jsonObj.getString("type"))
         ps.setString(8,jsonObj.get("module").toString)
         ps.setString(9,HanLP.extractKeyword(jsonObj.get("post_title").toString.replace(" ","")+jsonObj.getString("content_text"), 4).toString.replace("[","").replace("]",""))
-        ps.setString(10, summary.summarize(jsonObj.getString("content_text").replaceFirst(".*本文.*转载.*?[。]","").replaceFirst("除非注明.*",""), "MMR"))
+        ps.setString(10, summary.summarize(jsonObj.getString("content_text").replaceFirst(".*本文.*转载.*?[。]","").replaceFirst("除非注明.*","").replaceFirst("更多专业报道.*", ""), "MMR"))
         ps.setInt(11,0)
         ps.executeUpdate()
       }catch{
