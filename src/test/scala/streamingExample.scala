@@ -2,6 +2,7 @@ import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.json.JSONObject
 
 /**
   * Created by cluster on 2017/6/11.
@@ -26,9 +27,9 @@ object streamingExample {
     /**
       * 方法二
       */
-    kafkaStream.foreachRDD(rdd => {
+    kafkaStream.map(pair => replaceContext(pair._2)).foreachRDD(rdd => {
       rdd.foreach( msg=>{
-        println(msg._2)
+        println(msg)
       })
     })
 
@@ -41,4 +42,13 @@ object streamingExample {
     ssc.awaitTermination()
     //ssc.stop()
   }
+  def replaceContext(str: String): JSONObject ={
+    val json = new JSONObject(str)
+    if (json.has("content_text")){
+      val content_text = json.get("content_text").toString.replaceAll("(.*本文.*转载.*?[。]|更多专业报道.*|欢迎长按下方二维码.*?[。]|电商资讯第一入口问答｜.*|除非注明.*|问答｜.*|更多案例尽在.*|SocialBeta：每日.*|文中图片来自.*|题图.*)", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+      json.put("content_text",content_text)
+    }
+    json
+  }
+
 }

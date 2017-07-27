@@ -44,8 +44,12 @@ object streamingProcessTest extends Serializable  {
 //    val simClass = new SimHashTest
     val sql_commerce: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords,abstract,state) VALUES (?,?,?,?,?,?,?,?,?,?,?)"
     val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
+
+//    val DStream = kafkaDStream.map()
     kafkaDStream.foreachRDD(rdd =>{
+
       rdd.foreachPartition(partion =>{
+
 //        conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
 //        val conn = ConnectionPool.getConnection.getOrElse(null)
 //        if(conn!=null){
@@ -58,7 +62,7 @@ object streamingProcessTest extends Serializable  {
 //                if (simURL == null){
                   //存入MySQL
 //                  data2MySQL.toMySQL_commerce(conn,sql_commerce,jsonObj)
-                  ES.storageArticle(jsonObj)
+//                  ES.storageArticle(jsonObj)
                   println("commerce："+jsonObj.get("post_title"))
 //                }else{
 //                  println(jsonObj.get("post_title")+"type = commerce文章存在")
