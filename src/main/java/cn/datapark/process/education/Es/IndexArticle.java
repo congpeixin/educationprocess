@@ -28,17 +28,17 @@ public class IndexArticle implements Serializable {
         List<String> keywordList = HanLP.extractKeyword(jsonObj.get("post_title").toString().replace(" ","")+jsonObj.getString("content_text"), 4);
         Map articleInfoMap = new HashMap();
         String title = jsonObj.get("post_title").toString().replace(" ","");// 标题
-        String content =jsonObj.getString("content_text").replaceAll("[\\x{10000}-\\x{10FFFF}]", "").toString();//内容
+        String content =jsonObj.getString("content_text");//内容
         String time = ChangeTime(new Long(jsonObj.getInt("crawl_time")));//时间  格式yyyy-MM-dd
         String[] keyWord = keywordList.toArray(new String[keywordList.size()]);// 关键字
-        String core = summary.summarize(jsonObj.getString("content_text").replaceFirst(".*本文.*转载.*?[。]","").replaceFirst("除非注明.*","").replaceFirst("更多专业报道.*", ""), "MMR");//核心提示
-
+//        String core = summary.summarize(jsonObj.getString("content_text"));//核心提示
+        String origin = jsonObj.get("site_name").toString();
         String id = Base64.getUrlEncoder().encodeToString(title.getBytes());
-        articleInfoMap.put("title",title);
-        articleInfoMap.put("content",content);
-        articleInfoMap.put("time",time);
-        articleInfoMap.put("keyWord",keyWord);
-        articleInfoMap.put("core",core);
+        articleInfoMap.put("title",title);//文章标题
+        articleInfoMap.put("content",content);//文章内容
+        articleInfoMap.put("time",time);//抓取事件
+        articleInfoMap.put("keyWord",keyWord);//关键词
+        articleInfoMap.put("origin",origin);//文章出处（网站）
         boolean isCreated = false;
         IndexResponse response = null;
         XContentBuilder doc = null;

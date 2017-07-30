@@ -10,11 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * 中搜币充值接口
- * 类的作用:
- * 作者:邱文渊
- * email: qiuwenyuan@zhongsou.com
- * version: 1.0
+
  */
 public class HttpUtil {
 

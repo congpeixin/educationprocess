@@ -62,7 +62,7 @@ object streamingProcessTest extends Serializable  {
 //                if (simURL == null){
                   //存入MySQL
 //                  data2MySQL.toMySQL_commerce(conn,sql_commerce,jsonObj)
-//                  ES.storageArticle(jsonObj)
+                  ES.storageArticle(jsonObj)
                   println("commerce："+jsonObj.get("post_title"))
 //                }else{
 //                  println(jsonObj.get("post_title")+"type = commerce文章存在")
