@@ -16,7 +16,7 @@ import org.json.JSONObject
   * 对conference 数据进行search方式去重
   */
 object Test01_compare {
-  Logger.getLogger("org").setLevel(Level.ERROR)
+
   //ConfigUtil.initConfig(classOf[ArticleContentExtractBolt].getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   ConfigUtil.initConfig(Test01_compare.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance

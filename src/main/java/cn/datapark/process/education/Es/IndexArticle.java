@@ -1,7 +1,8 @@
 package cn.datapark.process.education.Es;
 
-import HanLPProcess.HanLP;
+
 import cn.datapark.process.education.Summary.NewsSummary;
+import com.hankcs.hanlp.HanLP;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.json.JSONObject;

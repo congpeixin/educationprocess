@@ -4,7 +4,7 @@ import java.sql.{PreparedStatement, Connection, DriverManager}
   * Created by cluster on 2017/6/26.
   */
 object Test06_searchMysql {
-  Logger.getLogger("org").setLevel(Level.ERROR)
+
   def main(args: Array[String]) {
     // connect to the database named "mysql" on the localhost
     val driver = "com.mysql.jdbc.Driver"

@@ -8,7 +8,7 @@ import org.apache.spark.sql.SparkSession
   * Created by cluster on 2017/6/21.
   */
 object GetKW {
-  Logger.getLogger("org").setLevel(Level.ERROR)
+
   def main(args: Array[String]) {
     val spark = SparkSession
       .builder()

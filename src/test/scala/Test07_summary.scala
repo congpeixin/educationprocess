@@ -1,4 +1,4 @@
-import HanLPProcess.HanLP
+import com.hankcs.hanlp.HanLP
 
 /**
   * Created by cluster on 2017/7/14.

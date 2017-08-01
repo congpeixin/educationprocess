@@ -21,7 +21,7 @@ import org.json.JSONObject
   *
   */
 object Test02_simhash {
-  Logger.getLogger("org").setLevel(Level.ERROR)
+
   //ConfigUtil.initConfig(classOf[ArticleContentExtractBolt].getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   ConfigUtil.initConfig(Test02_simhash.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance

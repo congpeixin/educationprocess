@@ -14,7 +14,7 @@ import org.json.JSONObject
   * Created by cluster on 2017/6/21.
   */
 object Test05_wordcount {
-  Logger.getLogger("org").setLevel(Level.ERROR)
+
   def main(args: Array[String]) {
 //    if (args.length < 4) {
 //      System.err.println("Usage: KafkaWordCount <zkQuorum> <group> <topics> <numThreads>")
