@@ -9,9 +9,10 @@
  * This source is subject to the LinrunSpace License. Please contact 上海林原信息科技有限公司 to get more information.
  * </copyright>
  */
-package HanLPProcess;
+package com.hankcs.hanlp;
 
 import com.hankcs.hanlp.corpus.dependency.CoNll.CoNLLSentence;
+import com.hankcs.hanlp.corpus.io.FileIOAdapter;
 import com.hankcs.hanlp.corpus.io.IIOAdapter;
 import com.hankcs.hanlp.dependency.nnparser.NeuralNetworkDependencyParser;
 import com.hankcs.hanlp.dictionary.py.Pinyin;
@@ -27,6 +28,7 @@ import com.hankcs.hanlp.summary.TextRankSentence;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import com.hankcs.hanlp.utility.Predefine;
 import com.hankcs.hanlp.utility.TextUtility;
+import sun.reflect.ReflectionFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -187,7 +189,7 @@ public class HanLP
                 ClassLoader loader = Thread.currentThread().getContextClassLoader();
                 if (loader == null)
                 {  // IKVM (v.0.44.0.5) doesn't set context classloader
-                    loader = com.hankcs.hanlp.HanLP.Config.class.getClassLoader();
+                    loader = HanLP.Config.class.getClassLoader();
                 }
                 p.load(new InputStreamReader(Predefine.HANLP_PROPERTIES_PATH == null ?
                         loader.getResourceAsStream("hanlp.properties") :
@@ -348,23 +350,23 @@ public class HanLP
     }
 
     /**
-     * 简转繁,是{@link com.hankcs.hanlp.HanLP#convertToTraditionalChinese(String)}的简称
+     * 简转繁,是{@link com.hankcs.hanlp.HanLP#convertToTraditionalChinese(java.lang.String)}的简称
      * @param s 简体中文
      * @return 繁体中文(大陆标准)
      */
     public static String s2t(String s)
     {
-        return com.hankcs.hanlp.HanLP.convertToTraditionalChinese(s);
+        return HanLP.convertToTraditionalChinese(s);
     }
 
     /**
-     * 繁转简,是{@link com.hankcs.hanlp.HanLP#convertToSimplifiedChinese(String)}的简称
+     * 繁转简,是{@link HanLP#convertToSimplifiedChinese(String)}的简称
      * @param t 繁体中文(大陆标准)
      * @return 简体中文
      */
     public static String t2s(String t)
     {
-        return com.hankcs.hanlp.HanLP.convertToSimplifiedChinese(t);
+        return HanLP.convertToSimplifiedChinese(t);
     }
 
     /**
@@ -613,11 +615,4 @@ public class HanLP
         // The actual length of the summary generated may be short than the required length, but never longer;
         return TextRankSentence.getSummary(document, max_length);
     }
-
-    public static void main(String[]args){
-        List<String> list= extractKeyword("随着人口老龄化、二孩时代的到来，我国从事家政服务人员已达2000万，北京等一线城市更是供不应求，因此入职门槛低与高薪成为家政行业的最大特点",5);
-        String[] keyWord = list.toArray(new String[list.size()]);
-
-    }
-
 }
