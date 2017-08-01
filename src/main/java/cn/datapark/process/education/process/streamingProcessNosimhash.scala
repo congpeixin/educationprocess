@@ -1,4 +1,5 @@
 package cn.datapark.process.education.process
+
 import java.sql.{Statement, DriverManager, PreparedStatement, Connection}
 
 import cn.datapark.process.education.DB.data2MySQL
@@ -16,16 +17,18 @@ import org.json.JSONObject
 /**
   * Created by cluster on 2017/6/11.
   */
-object streamingProcessNew extends Serializable  {
+object streamingProcessNosimhash extends Serializable  {
   Logger.getLogger("org").setLevel(Level.ERROR)
+  Logger.getLogger("org.apache.kafka").setLevel(Level.ERROR)
+  Logger.getLogger("org.apache.zookeeper").setLevel(Level.ERROR)
+  Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
   ConfigUtil.initConfig(streamingProcess.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance
   def main(args: Array[String]) {
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
     val topics = "test04"
-
     // Create context with 2 second batch interval
-    val sparkConf = new SparkConf().setAppName("educationProcess").setMaster("local[2]")
+    val sparkConf = new SparkConf().setAppName("educationProcess").setMaster("local[4]")
     //    val sparkConf = new SparkConf().setAppName("educationProcess")
     //加入解决序列化问题
     sparkConf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
@@ -39,7 +42,7 @@ object streamingProcessNew extends Serializable  {
     //    var conn: Connection = null
     var ps: PreparedStatement = null
     val ES = new IndexArticle
-    val simClass = new SimHashTest
+
     val sql_commerce: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords,state) VALUES (?,?,?,?,?,?,?,?,?,?)"
     val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
 
@@ -54,16 +57,11 @@ object streamingProcessNew extends Serializable  {
 
             if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "")||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
               if (jsonObj.get("type") == "commerce"){
-                simURL = simClass.checkSimilarArticle(jsonObj)
-                if (simURL == null){
                   //存入MySQL
                   data2MySQL.toMySQL_commerce(conn,sql_commerce,jsonObj)
                   //存入ES
                   ES.storageArticle(jsonObj)
                   println("commerce："+jsonObj.get("post_title"))
-                }else{
-                  println(jsonObj.get("post_title")+"type = commerce文章存在")
-                }
               }
               //这个类别的文章不用simhash去重，直接给定 post_title和conference_address 去查是否有这条数据
               else if (jsonObj.get("type") == "conference"){
@@ -120,6 +118,5 @@ object streamingProcessNew extends Serializable  {
     }
     json
   }
-
 
 }

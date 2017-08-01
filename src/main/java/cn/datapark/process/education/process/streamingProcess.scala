@@ -12,22 +12,23 @@ import org.apache.spark.SparkConf
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.json.JSONObject
-
 /**
   * Created by cluster on 2017/6/11.
   */
 object streamingProcess extends Serializable  {
   Logger.getLogger("org").setLevel(Level.ERROR)
-  //ConfigUtil.initConfig(classOf[ArticleContentExtractBolt].getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
+  Logger.getLogger("org.apache.kafka").setLevel(Level.ERROR)
+  Logger.getLogger("org.apache.zookeeper").setLevel(Level.ERROR)
+  Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
   ConfigUtil.initConfig(streamingProcess.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance
   def main(args: Array[String]) {
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
-    val topics = "test04"
+    val topics = "test06"
 
     // Create context with 2 second batch interval
-    val sparkConf = new SparkConf().setAppName("educationProcess").setMaster("local[2]")
-//    val sparkConf = new SparkConf().setAppName("educationProcess")
+    val sparkConf = new SparkConf().setAppName("educationProcess").setMaster("local[4]")
+    //    val sparkConf = new SparkConf().setAppName("educationProcess")
     //加入解决序列化问题
     sparkConf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     sparkConf.set("spark.streaming.kafka.maxRatePerPartition", "5")
@@ -37,29 +38,30 @@ object streamingProcess extends Serializable  {
     val kafkaParams = Map[String, String]("metadata.broker.list" -> brokers,"serializer.class" -> "kafka.serializer.StringEncoder", "auto.offset.reset" -> "smallest")
     val kafkaDStream = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
     //    StreamingExamples.setStreamingLogLevels()
-//    var conn: Connection = null
+    //    var conn: Connection = null
     var ps: PreparedStatement = null
     val ES = new IndexArticle
     val simClass = new SimHashTest
-    val sql_commerce: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords,abstract,state) VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+    val sql_commerce: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords,state) VALUES (?,?,?,?,?,?,?,?,?,?)"
     val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
 
-    kafkaDStream.foreachRDD(rdd =>{
+    kafkaDStream.map(pair => replaceContext(pair._2)).foreachRDD(rdd =>{
 
       rdd.foreachPartition(partion =>{
-//        conn = DriverManager.getConnection("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8", "root", "123456")
+
         val conn = ConnectionPool.getConnection.getOrElse(null)
         if(conn!=null){
           var simURL = ""
-          partion.foreach(json =>{
-            val jsonObj = new JSONObject(json._2)
-            if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "" && judgeLenght(jsonObj.get("content_text").toString))||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
+          partion.foreach(jsonObj =>{
+
+            if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "")||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
               if (jsonObj.get("type") == "commerce"){
                 simURL = simClass.checkSimilarArticle(jsonObj)
                 if (simURL == null){
                   //存入MySQL
                   data2MySQL.toMySQL_commerce(conn,sql_commerce,jsonObj)
-//                ES.storageArticle(jsonObj)
+                  //存入ES
+                  ES.storageArticle(jsonObj)
                   println("commerce："+jsonObj.get("post_title"))
                 }else{
                   println(jsonObj.get("post_title")+"type = commerce文章存在")
@@ -98,15 +100,20 @@ object streamingProcess extends Serializable  {
     */
   def judgeLenght(str: String): Boolean ={
     val  istr = str.length()
-//    println("str的长度是：" + istr)
+    //    println("str的长度是：" + istr)
     val  str1 = str.replaceAll("[!?。！？;；]", "")
     val istr1 = str1.length()
-//    System.out.println("str1的长度是：" + istr1)
-//    System.out.println("标点符号的个数是：" + (istr - istr1))
+    //    System.out.println("str1的长度是：" + istr1)
+    //    System.out.println("标点符号的个数是：" + (istr - istr1))
     val result = istr - istr1
     if (result <= 3) false else true
   }
 
+  /**
+    * 清洗文章内容
+    * @param str
+    * @return
+    */
   def replaceContext(str: String): JSONObject ={
     val json = new JSONObject(str)
     if (json.has("content_text")){
