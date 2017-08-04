@@ -26,7 +26,7 @@ object streamingProcessNosimhash extends Serializable  {
   val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance
   def main(args: Array[String]) {
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
-    val topics = "test04"
+    val topics = "test07"
     // Create context with 2 second batch interval
     val sparkConf = new SparkConf().setAppName("educationProcess").setMaster("local[4]")
     //    val sparkConf = new SparkConf().setAppName("educationProcess")
@@ -47,20 +47,17 @@ object streamingProcessNosimhash extends Serializable  {
     val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
 
     kafkaDStream.map(pair => replaceContext(pair._2)).foreachRDD(rdd =>{
-
       rdd.foreachPartition(partion =>{
-
         val conn = ConnectionPool.getConnection.getOrElse(null)
         if(conn!=null){
-          var simURL = ""
+//          var simURL = ""
           partion.foreach(jsonObj =>{
-
             if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "")||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
               if (jsonObj.get("type") == "commerce"){
                   //存入MySQL
                   data2MySQL.toMySQL_commerce(conn,sql_commerce,jsonObj)
                   //存入ES
-                  ES.storageArticle(jsonObj)
+//                  ES.storageArticle(jsonObj)
                   println("commerce："+jsonObj.get("post_title"))
               }
               //这个类别的文章不用simhash去重，直接给定 post_title和conference_address 去查是否有这条数据
@@ -88,7 +85,6 @@ object streamingProcessNosimhash extends Serializable  {
     ssc.awaitTermination()
 
   }
-
   /**
     * 判断文章中，可以分割为摘要的标点个数，如果小于等于3，则过滤掉
     * @param str
@@ -114,7 +110,17 @@ object streamingProcessNosimhash extends Serializable  {
     val json = new JSONObject(str)
     if (json.has("content_text")){
       val content_text = json.get("content_text").toString.replaceAll("(.*本文.*转载.*?[。]|更多专业报道.*|欢迎长按下方二维码.*?[。]|电商资讯第一入口问答｜.*|除非注明.*|问答｜.*|更多案例尽在.*|SocialBeta：每日.*|文中图片来自.*|题图.*)", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+      val content_html = json.get("content_html").toString.replaceAll("(点击下载“界面新闻”APP|" +
+        "本文.*转载.*[\\u4e00-\\u9fa5|。|.+）]|更多专业报道，请|欢迎长按下方二维码.*?[。]|" +
+        "除非注明.*[.html]|问答｜.+[?|？]|" +
+        "未来面前，你我还都是孩子，还不去下载|虎嗅App|猛嗅创新！|关注作者|已关注|私信" +
+        "|(数英网APP用户需点击放大二维码，长按识别)|（数英网APP用户需点击放大二维码，长按识别）|H5玩法说明视频|扫描二维码，.*?[！]|" +
+        "【版权提示】亿邦动力网倡导尊重与保护知识产权。如发现本站文章存在版权问题，烦请提供版权疑问、身份证明、版权证明、联系方式等发邮件至run@ebrun.com，我们将及时沟通与处理。|" +
+        "电商资讯第一入口|【品牌制片厂】|是 SocialBeta 推出的栏目，会从创意、制作、幕后等多个角度分享品牌所拍摄的可以媲美电影的视频广告，我们的口号是：「别看烂片啦！来看广告啊喂！」|" +
+        "欢迎关注我们的微信公众号：品牌制片厂（brandfilm），每周三 20:46 定时更新。|编者按：|，36氪经授权发布。|作者.*?[。])", "")
+        .replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
       json.put("content_text",content_text)
+      json.put("content_html",content_html)
     }
     json
   }

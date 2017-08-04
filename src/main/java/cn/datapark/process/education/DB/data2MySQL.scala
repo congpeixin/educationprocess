@@ -27,7 +27,7 @@ object data2MySQL {
         ps.setString(2, jsonObj.get("post_title").toString.replace(" ",""))
         ps.setString(3,jsonObj.get("post_url").toString)
         ps.setString(4,jsonObj.getString("content_text"))
-        ps.setString(5,jsonObj.get("content_html").toString.replaceAll("[\\x{10000}-\\x{10FFFF}]", ""))
+        ps.setString(5,jsonObj.get("content_html").toString)
         ps.setInt(6,jsonObj.getInt("crawl_time"))
         ps.setString(7,jsonObj.getString("type"))
         ps.setString(8,jsonObj.get("module").toString)
