@@ -115,20 +115,36 @@ object streamingProcess extends Serializable  {
     * @return
     */
   def replaceContext(str: String): JSONObject ={
+    var content_text = ""
+    var content_html = ""
     val json = new JSONObject(str)
-    if (json.has("content_text")){
-      val content_text = json.get("content_text").toString.replaceAll("(.*本文.*转载.*?[。]|更多专业报道.*|欢迎长按下方二维码.*?[。]|电商资讯第一入口问答｜.*|除非注明.*|问答｜.*|更多案例尽在.*|SocialBeta：每日.*|文中图片来自.*|题图.*)", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
-      val content_html = json.get("content_html").toString.replaceAll("(点击下载“界面新闻”APP|" +
-        "本文.*转载.*[\\u4e00-\\u9fa5|。|.+）]|更多专业报道，请|欢迎长按下方二维码.*?[。]|" +
-        "除非注明.*[.html]|问答｜.+[?|？]|更多案例尽在.*[<]|" +
-        "未来面前，你我还都是孩子，还不去下载|虎嗅App|猛嗅创新！|<!--虎嗅团队认证-->|关注作者|已关注|私信" +
-        "|(数英网APP用户需点击放大二维码，长按识别)|（数英网APP用户需点击放大二维码，长按识别）|H5玩法说明视频|扫描二维码，.*?[！]|" +
-        "【版权提示】亿邦动力网倡导尊重与保护知识产权。如发现本站文章存在版权问题，烦请提供版权疑问、身份证明、版权证明、联系方式等发邮件至run@ebrun.com，我们将及时沟通与处理。|" +
-        "电商资讯第一入口|【品牌制片厂】|是 SocialBeta 推出的栏目，会从创意、制作、幕后等多个角度分享品牌所拍摄的可以媲美电影的视频广告，我们的口号是：「别看烂片啦！来看广告啊喂！」|" +
-        "欢迎关注我们的微信公众号：品牌制片厂（brandfilm），每周三 20:46 定时更新。|编者按：|，36氪经授权发布。|作者.*?[。])", "")
-        .replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
-      json.put("content_text",content_text)
-      json.put("content_html",content_html)
+    if (json.has("content_html")){
+      if (json.get("site_name").toString == "36氪"){
+        content_text = json.get("content_text").toString.replaceAll("(.*本文.*转载.*?[。]|更多专业报道.*|欢迎长按下方二维码.*?[。]|电商资讯第一入口问答｜.*|除非注明.*|问答｜.*|更多案例尽在.*|SocialBeta：每日.*|文中图片来自.*|题图.*)", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+        content_html = json.get("content_html").toString.replaceAll(".*36氪经授权发布。|.*授权36氪转载。|编者按：本文[来|转]自.*?，|本文来自.*?，","")
+
+        json.put("content_text",content_text)
+        json.put("content_html",content_html)
+      }
+      else{
+        content_text = json.get("content_text").toString.replaceAll("(.*本文.*转载.*?[。]|更多专业报道.*|欢迎长按下方二维码.*?[。]|电商资讯第一入口问答｜.*|除非注明.*|问答｜.*|更多案例尽在.*|SocialBeta：每日.*|文中图片来自.*|题图.*)", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+        content_html = json.get("content_html").toString.replaceAll("<span.*><b>未按照规范转载者，虎嗅保留追究相应责任的权利</b></span>|<span>html<br></span>|<span.*>\\*文章为作者独立观点，不代表虎嗅网立场<br></span>" +
+          "|<span.*>.*来源[：|自|于].*</span>|<p>\\s*.*来源[：| ：|自|于|\\ |].*</p>|<span.*>.*[本文|关注].*微信公众号.*</span>|未来面前，你我还都是孩子，还不去下载|虎嗅App|猛嗅创新！|"+
+          "关注大胆，拒绝一切小心翼翼|↓|虎嗅注：|<span.*>.*来自:.*</span>|<p.*>.*标签:.*</p>|除非注明.*[.html]|<div class=\"author-main\">.*</p></div>|" +
+          "<div class=\"article-btn\">.*</span></div>|<div class=\"article-source\">.*</em></div>|本文.*转载.*[\\u4e00-\\u9fa5|。|.+）]|<p.*>.*更多专业报道.*</p>|" +
+          "本文.*转载.*[\\u4e00-\\u9fa5|。|.+）]|关注作者|已关注|私信|H5玩法说明视频|" +
+          "【品牌制片厂】|是 SocialBeta 推出的栏目，会从创意、制作、幕后等多个角度分享品牌所拍摄的可以媲美电影的视频广告，我们的口号是：「别看烂片啦！来看广告啊喂！」|" +
+          "<p>.*微信.*关注.*</p>|<p nocleanhtml=\"true\">.*</p>|<p class=\"lazylood\">.*</p>|<p>.*图.*来自.*</p>|<p style=\"text-align:center;\">.*</p>|" +
+          "<blockquote style=\"white-space: normal;\">.*案例一周.*</blockquote>|<p style=\"white-space: normal;\">.*案例一周.*</p>|<p>.*本文来自.*</p>" +
+          "|<p>.*本文转自.*</p>|<p>\\s*雷锋网.*文章.*转载.*</p>|<p>.*雷锋网.*公众号.*</p>|<p.*>.*[本文|关注].*微信公众号.*</p>|<img class=\"aligncenter\" src=\"http://www.tmtpost.com/public/css/images/wzny_ewm.jpg\" alt=\"\">" +
+          "|<p.*>.*[本文|关注].*微信号.*</p>|<p.*>.*作者：.*</p>|<p.*>.*关注.*公众号.*</p>|<img .* alt=\"钛媒体\"/>|<b>.*速途.*消息.*</b>" +
+          "|<img src=.*logo_sootoo.jpg\"/>|<p>【广 告 主】.*</p>|<p>【广告代理】.*</p>|【制作公司】.*|<div class=\"article-copyright-bar\">([\\s\\S]*?)</div>|<p class=\"article-copyright-bar\">([\\s\\S]*?)</p>" +
+          "|<p.*>.*猎云网.*company_code.*</p>|<p class=\"instructions\">.*</p>|<img.*机器之能图标.png\"/>|<p>.*编译[ \\| |:|：].*</p>|<p class=\"vcard author\">.*</p>" +
+          "|<p>.*[微信公众号|微信号][：|:| |(|（][0-9a-zA-Z]*</p>|<p>.*扫描.*二维码.*</p>|<p.*>.*长按.*二维码.*</p>|<p.*>.*活动详情.*</p>|<p.*>.*报名[详情|请戳|请点击连接|链接|连接].*</p>" +
+          "|<p.*>.*本文.*作者.*</p>|<p.*><a href=.*ad/id.*</p>|<div class=\"author\">.*?</div>|<div class=\"mesinfo cf\">.*</div>|<div class=\"copyright\">.*</div>|DoNews.*记者.*）","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+        json.put("content_text",content_text)
+        json.put("content_html",content_html)
+      }
     }
     json
   }
