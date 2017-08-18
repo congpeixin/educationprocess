@@ -6,9 +6,11 @@ import org.json.JSONObject
   * Created by cluster on 2017/8/10.
   */
 object replaceContextProcess {
+
+  var content_text = ""
+  var content_html = ""
   def replaceContext(str: String): JSONObject ={
-    var content_text = ""
-    var content_html = ""
+
     val json = new JSONObject(str)
     if (json.has("content_html")){
       if (json.get("site_name").toString == "36氪"){
@@ -20,26 +22,26 @@ object replaceContextProcess {
       }
       else if (json.get("site_name").toString == "麦迪逊邦"){
         content_text = json.get("content_text").toString.replaceAll("信息来源[：|自].*", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
-        content_html = json.get("content_html").toString.replaceAll("<p>\\s*.*来源[：| ：|自|于|\\ |].*</p>","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+        content_html = json.get("content_html").toString.replaceAll("<p>\\s*.*来源[：| ：|自|于|\\ |].*</p>|<span.*?>麦迪逊邦综合.*?</span>","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
         json.put("content_text",content_text)
         json.put("content_html",content_html)
       }
       else if (json.get("site_name").toString == "雷锋网"){
         content_text = json.get("content_text").toString.replaceAll("雷锋网..文章，未经授权禁止转载。详情见转载须知。|\\(公众号：雷锋网\\)|.*按：本文作者.*首发.*?。", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
-        content_html = json.get("content_html").toString.replaceAll("\\(公众号：雷锋网\\)|<p>雷锋网..文章，未经授权禁止转载。详情见.*转载须知</a>。</p>|<p>.*按：本文作者.*首发.*?</p>","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+        content_html = json.get("content_html").toString.replaceAll("\\(公众号：雷锋网\\)|<p>雷锋网特约稿件，未经授权禁止转载。.*?</p>|<p>.*按：本文作者.*首发.*?</p>","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
         json.put("content_text",content_text)
         json.put("content_html",content_html)
       }
       else if (json.get("site_name").toString == "镁客网"){
         content_text = json.get("content_text").toString.replaceAll("最后，记得关注微信公众号：镁客网（im2maker），更多干货在等你！", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
-        content_html = json.get("content_html").toString.replaceAll("<p.*>.*[本文|关注].*微信公众号.*</p>","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+        content_html = json.get("content_html").toString.replaceAll("<p.*>.*[本文|关注].*微信公众号.*?</p>","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
         json.put("content_text",content_text)
         json.put("content_html",content_html)
       }
       else if (json.get("site_name").toString == "钛媒体"){
         content_text = json.get("content_text").toString.replaceAll("更多精彩内容，关注钛媒体微信号（ID：taimeiti），或者下载钛媒体App|【钛媒体作者：.*】", "").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
         content_html = json.get("content_html").toString.replaceAll("<p>.*[本文|关注].*微信号.*</p>|<img .* alt=\"钛媒体\"/>|<div class=\"sm\"><p>([\\s\\S]*?)</div>|<div class=\"txt\">([\\s\\S]*?)</div>" +
-          "|<div class=\"author-cont\">([\\s\\S]*?)</div>|<div class=\"author-info clear\">([\\s\\S]*?)</div>|<div class=\"authors fl\">([\\s\\S]*?)</div>|<p>【钛媒体作者：.*】</p>","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
+          "|<div class=\"author-cont\">([\\s\\S]*?)</div>|<div class=\"author-info clear\">([\\s\\S]*?)</div>|<div class=\"authors fl\">([\\s\\S]*?)</div>|<p>【钛媒体作者：.*】</p>|<p><strong>钛媒体注：</strong>本文系钛媒体专业版用户.*?</p>|<p><strong>钛媒体专业版用户.*?</p>|成为钛媒体专业版用户.*?。|点击链接","").replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
         json.put("content_text",content_text)
         json.put("content_html",content_html)
       }
@@ -178,8 +180,16 @@ object replaceContextProcess {
         content_html = json.get("content_html").toString.replaceAll("[\\x{10000}-\\x{10FFFF}]", "")
         json.put("content_text",content_text)
         json.put("content_html",content_html)
+        println(json.get("site_name")+": at here")
       }
     }
     json
   }
+
+  def main(args: Array[String]) {
+    val str = "{\"site_name\":\"jiemian\",\"post_title\":\"美团外卖的广告把“魔性”进行到底\",\"crawl_time\":1500946483,\"post_url\":\"http://www.jiemian.com/article/1478086.html\",\"module\":\"brand\",\"content_text\":\"如果说哪种广告风成为了当下社交网络时代的流行，“魔性”一定是其中一种：学习泰国和日本，用离奇的脑洞和神反转故意制造尴尬，仿佛一不小心就会成为网络爆款。被美团外卖找来作代言人的杨洋和赵丽颖也没能逃脱这一潮流。比如在炎热的夏季用外卖满足霸道老板的要求；在电闪雷鸣的雨夜用外卖给隔壁小哥送杯姜汤；更奇葩的梗是，美团居然告诉你用外卖可以……护肤美白。不同的消费场景，想要凸显的依然是产品和服务的便利程度。不过而当红明星带来的粉丝经济依然明显，即使剧情尴尬，也依然有忠实粉丝愿意吃下这剂安利：官微下疯狂的评论和转发，几乎都是杨洋和赵丽颖粉丝的声音。美团外卖赵丽颖你难免会拿竞争对手饿了么前段时间的品牌广告作比较。和努力提升品牌调性的饿了么不同，美团外卖的广告看上去还是那么“接地气”。翻看它过去的广告就会发现，无论是明星还是素人，“搞笑”“魔性”都是一贯的风格。比如去年8月奥运期间，美团曾经找来小岳岳，配上游戏通关一样的卡通画面，高唱“五环套餐治脑残”，喜剧明星的话题性加上神曲的洗脑，这支广告在一众励志画风的奥运营销中显得十分另类。蹭正剧的热度一本正经的打广告，这种反差也能带来一些幽默。借着现象级热播剧《人民的名义》东风，美团居然找来饰演剧中反派赵瑞龙的演员冯雷出演了一支搞笑视频。和动不动就强调升级的品牌相比，美团的魔性和搞笑算是一种“坚持”。更换slogan固然是对品牌的一种刷新，不过对于现阶段的美团来说，把“美团外卖，送啥都快”塑造成像“今年过节不收礼，收礼只收脑白金”“充电5分钟，通话2小时”这样洗脑的品牌记忆点，可能更为关键。 \",\"_id\":\"http://www.jiemian.com/article/1478086.html\",\"type\":\"commerce\",\"content_html\":\"<html>\"}"
+    replaceContext(str)
+  }
+
+
 }
