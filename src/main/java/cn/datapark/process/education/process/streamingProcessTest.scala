@@ -6,6 +6,7 @@ import cn.datapark.process.education.DB.data2MySQL
 import cn.datapark.process.education.Es.IndexArticle
 import cn.datapark.process.education.SimHash.{ConfigUtil, SimHashTest,ArticleExtractTopoConfig}
 import cn.datapark.process.education.Util.ConnectionPool
+import cn.datapark.process.education.reg.{replaceContent_html, ContentDeepExtractor}
 import com.hankcs.hanlp.HanLP
 import kafka.serializer.StringDecoder
 import org.apache.log4j.{Logger, Level}
@@ -17,12 +18,12 @@ import org.json.JSONObject
 /**
   * Created by cluster on 2017/6/11.
   */
-object streamingProcessNoReg extends Serializable  {
+object streamingProcessTest extends Serializable  {
   Logger.getLogger("org").setLevel(Level.ERROR)
   Logger.getLogger("org.apache.kafka").setLevel(Level.ERROR)
   Logger.getLogger("org.apache.zookeeper").setLevel(Level.ERROR)
   Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
-  ConfigUtil.initConfig(streamingProcess.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
+  ConfigUtil.initConfig(streamingProcessTest.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance
   def main(args: Array[String]) {
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
@@ -43,22 +44,20 @@ object streamingProcessNoReg extends Serializable  {
     var ps: PreparedStatement = null
     val ES = new IndexArticle
 
+
     val sql_commerce: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords,state) VALUES (?,?,?,?,?,?,?,?,?,?)"
     val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
 
-    kafkaDStream.map(pair => replaceContext(pair._2)).foreachRDD(rdd =>{
+    kafkaDStream.map(pair => replaceContent_html.replaceContext(pair._2)).foreachRDD(rdd =>{
       rdd.foreachPartition(partion =>{
         val conn = ConnectionPool.getConnection.getOrElse(null)
         if(conn!=null){
-//          var simURL = ""
           partion.foreach(jsonObj =>{
             if ((jsonObj.get("type") == "commerce" && jsonObj.get("content_text") != null && jsonObj.get("content_text") != "")||(jsonObj.get("type") == "conference" && jsonObj.get("post_title") != null && jsonObj.get("post_title") != "")){
               if (jsonObj.get("type") == "commerce"){
                   //存入MySQL
                   data2MySQL.toMySQL_commerce(conn,sql_commerce,jsonObj)
-                  //存入ES
-//                ES.storageArticle(jsonObj)
-                  println("commerce："+jsonObj.get("post_title"))
+//                  println("commerce："+jsonObj.get("post_title"))
               }
               //这个类别的文章不用simhash去重，直接给定 post_title和conference_address 去查是否有这条数据
               else if (jsonObj.get("type") == "conference"){
@@ -70,7 +69,7 @@ object streamingProcessNoReg extends Serializable  {
                 if (resultSet.next() == false){
                   //存入MySQL
                   data2MySQL.toMySQL_conference(conn,sql_conference,jsonObj)
-                  println("conference："+jsonObj.get("post_title"))
+//                  println("conference："+jsonObj.get("post_title"))
                 }else{
                   println(jsonObj.get("post_title")+"type = conference文章存在")
                 }
@@ -102,14 +101,4 @@ object streamingProcessNoReg extends Serializable  {
     if (result <= 3) false else true
   }
 
-  /**
-    * 清洗文章内容
-    *
-    * @param str
-    * @return
-    */
-  def replaceContext(str: String): JSONObject = {
-    val json = new JSONObject(str)
-    json
-  }
 }

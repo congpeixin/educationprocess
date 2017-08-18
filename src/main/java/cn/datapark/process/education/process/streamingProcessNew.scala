@@ -21,7 +21,7 @@ object streamingProcessNew extends Serializable  {
   Logger.getLogger("org.apache.kafka").setLevel(Level.ERROR)
   Logger.getLogger("org.apache.zookeeper").setLevel(Level.ERROR)
   Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
-  ConfigUtil.initConfig(streamingProcess.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
+  ConfigUtil.initConfig(streamingProcessNew.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance
   def main(args: Array[String]) {
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
@@ -47,9 +47,7 @@ object streamingProcessNew extends Serializable  {
     val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
 
     kafkaDStream.map(pair => replaceContextProcess.replaceContext(pair._2)).foreachRDD(rdd =>{
-
       rdd.foreachPartition(partion =>{
-
         val conn = ConnectionPool.getConnection.getOrElse(null)
         if(conn!=null){
           var simURL = ""
@@ -62,7 +60,7 @@ object streamingProcessNew extends Serializable  {
                   //存入MySQL
                   data2MySQL.toMySQL_commerce(conn,sql_commerce,jsonObj)
                   //存入ES
-//                  ES.storageArticle(jsonObj)
+                  ES.storageArticle(jsonObj)
                   println("commerce："+jsonObj.get("post_title"))
                 }else{
                   println(jsonObj.get("post_title")+"type = commerce文章存在")

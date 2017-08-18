@@ -15,7 +15,7 @@ import org.json.JSONObject
   */
 object streamingProcessSimhash {
   Logger.getLogger("org").setLevel(Level.ERROR)
-  ConfigUtil.initConfig(streamingProcess.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
+  ConfigUtil.initConfig(streamingProcessSimhash.getClass.getClassLoader.getResourceAsStream(ConfigUtil.topoConfigfile))
   val topoConfig: ArticleExtractTopoConfig = ConfigUtil.getConfigInstance
   private var simURL: String = ""
   def main(args: Array[String]) {
