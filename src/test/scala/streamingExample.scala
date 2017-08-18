@@ -18,7 +18,7 @@ object streamingExample {
     //    val ssc = new StreamingContext(conf, Durations.seconds(5))
     val ssc = new StreamingContext(conf,Seconds(2))
     //    val topics = Set("skurawdataonline_new01")
-    val topics = Set("test06")
+    val topics = Set("test07")
     val brokers = "process2.pd.dp:9092,process3.pd.dp:9092,process5.pd.dp:9092"
 
     val kafkaParams = Map[String, String](
