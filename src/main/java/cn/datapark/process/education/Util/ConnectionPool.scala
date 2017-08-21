@@ -11,7 +11,7 @@ object ConnectionPool {
     try{
       Class.forName("com.mysql.jdbc.Driver")
       val config = new BoneCPConfig()
-      config.setJdbcUrl("jdbc:mysql://192.168.39.18:3306/test?useUnicode=true&characterEncoding=UTF-8")
+      config.setJdbcUrl("jdbc:mysql://192.168.39.18:3306/datapark?useUnicode=true&characterEncoding=UTF-8")
       config.setUsername("root")
       config.setPassword("123456")
       config.setMinConnectionsPerPartition(2)

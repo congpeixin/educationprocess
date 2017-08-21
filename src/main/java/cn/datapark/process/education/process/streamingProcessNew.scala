@@ -5,7 +5,7 @@ import cn.datapark.process.education.DB.data2MySQL
 import cn.datapark.process.education.Es.IndexArticle
 import cn.datapark.process.education.SimHash.{ConfigUtil, SimHashTest,ArticleExtractTopoConfig}
 import cn.datapark.process.education.Util.ConnectionPool
-import cn.datapark.process.education.reg.replaceContextProcess
+import cn.datapark.process.education.reg.{replaceContent_html, replaceContextProcess}
 import com.hankcs.hanlp.HanLP
 import kafka.serializer.StringDecoder
 import org.apache.log4j.{Logger, Level}
@@ -46,7 +46,7 @@ object streamingProcessNew extends Serializable  {
     val sql_commerce: String = "INSERT INTO commerce (site_name,post_title,post_url,content_text,content_html,crawl_time,type,module,keywords,state) VALUES (?,?,?,?,?,?,?,?,?,?)"
     val sql_conference: String = "INSERT INTO conference (site_name,post_title,post_url,conference_address,conference_time,crawl_time,type,module) VALUES (?,?,?,?,?,?,?,?)"
 
-    kafkaDStream.map(pair => replaceContextProcess.replaceContext(pair._2)).foreachRDD(rdd =>{
+    kafkaDStream.map(pair => replaceContent_html.replaceContext(pair._2)).foreachRDD(rdd =>{
       rdd.foreachPartition(partion =>{
         val conn = ConnectionPool.getConnection.getOrElse(null)
         if(conn!=null){

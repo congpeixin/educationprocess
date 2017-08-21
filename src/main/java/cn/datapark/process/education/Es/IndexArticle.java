@@ -31,6 +31,7 @@ public class IndexArticle implements Serializable {
         String title = jsonObj.get("post_title").toString().replace(" ","");// 标题
         String content =jsonObj.getString("content_text");//内容
         String time = ChangeTime(new Long(jsonObj.getInt("crawl_time")));//时间  格式yyyy-MM-dd
+        String category = jsonObj.get("module").toString();
         String[] keyWord = keywordList.toArray(new String[keywordList.size()]);// 关键字
 //        String core = summary.summarize(jsonObj.getString("content_text"));//核心提示
         String origin = jsonObj.get("site_name").toString();
@@ -40,6 +41,7 @@ public class IndexArticle implements Serializable {
         articleInfoMap.put("time",time);//抓取事件
         articleInfoMap.put("keyWord",keyWord);//关键词
         articleInfoMap.put("origin",origin);//文章出处（网站）
+        articleInfoMap.put("category",category);//文章出处（网站）
         boolean isCreated = false;
         IndexResponse response = null;
         XContentBuilder doc = null;
