@@ -1,0 +1,1761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="06866ddf-da28-43a3-bb47-e868c3ecb02f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/BosonSummary.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/CharSetUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/CharsetCodecUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/ContentDeepExtractor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Ctext.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/GetKW.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/NewsSummary.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/SougouDictExtractor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/StatefulNetworkWordCount.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test01_compare.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test02_simhash.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test03_nosimhash.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test04_str.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test05_wordcount.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test06_searchMysql.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test07_summary.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test08_es.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test09_Stu.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Test10_split.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/Text11_replace.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/UpdateStateByKeyTest.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/list2String.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/processByspark2.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/streamingExample.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/webdriverdemo.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/logback.log" afterPath="$PROJECT_DIR$/logs/logback.log" />
+    </list>
+    <ignored path="educationprocess.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="educationprocess" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ContentDeepExtractor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/ContentDeepExtractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.515625">
+              <caret line="285" column="21" selection-start-line="285" selection-start-column="21" selection-end-line="285" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Package Object" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/scala/java/Config.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/java/EsUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/java/IndexArticle.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/java/SearchArticle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/HanLPProcess/HanLP.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test09_CompaExp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/Summary/NewsSummary.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test04_str.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/SimHash/TFIDFUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/SimHash/HttpUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/SimHash/SimHashTest.java" />
+        <option value="$PROJECT_DIR$/data/simhashJson.json" />
+        <option value="$PROJECT_DIR$/data/word/stopwords.txt" />
+        <option value="$PROJECT_DIR$/data/dictionary/stopwords.txt" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test07_summary.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test06_searchMysql.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test05_wordcount.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test03_nosimhash.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test02_simhash.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test01_compare.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/GetKW.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/Es/SearchArticle.java" />
+        <option value="$PROJECT_DIR$/data/dictionary/custom/CustomDictionary.txt" />
+        <option value="$PROJECT_DIR$/data/sougou/新词.txt" />
+        <option value="$PROJECT_DIR$/src/test/scala/SougouDictExtractor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/DB/data2MySQL.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webdriverdemo.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/Text11_replace.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcess.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/replaceContext.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessNosimhash.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessSimhash.scala" />
+        <option value="$PROJECT_DIR$/data/demo.txt" />
+        <option value="$PROJECT_DIR$/src/test/scala/Ctext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/replaceContextProcess.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/replaceContent_html.scala" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessNoReg.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessToDB.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessTest.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test09_Stu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessNew.scala" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/Es/IndexArticle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/Util/ConnectionPool.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/streamingExample.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Test10_split.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/CASHtmlImgConvert.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/ContentExtractor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/ContentDeepExtractor.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/ContentDeepExtractor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/ContentDeepExtractorTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="dpeducationprocess" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="dpeducationprocess" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="education" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="educationprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="word" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="dynamic.classpath" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\src\main\resources" />
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\src\test\scala" />
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\data\word" />
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.datapark.process.education.reg" />
+      <recent name="cn.datapark.process.education.process" />
+      <recent name="cn.datapark.process.education.Summary" />
+      <recent name="SimHash" />
+      <recent name="HanLP" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\data\sougou" />
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\src\main\java" />
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\src\main\resources" />
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\lib" />
+      <recent name="C:\Users\DN\IdeaProjects\educationprocess\src\main\java\SimHash" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.streamingExample">
+    <configuration default="false" name="ContentDeepExtractor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.datapark.process.education.reg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cn.datapark.process.education.reg.ContentDeepExtractor" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="educationprocess" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="CASHtmlImgConvert" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.datapark.process.education.reg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cn.datapark.process.education.reg.CASHtmlImgConvert" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="educationprocess" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Test10_split" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Test10_split" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="educationprocess" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ContentDeepExtractor (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="ContentDeepExtractor" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="educationprocess" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="streamingExample" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="streamingExample" />
+      <option name="VM_PARAMETERS" value="-Xms256m -Xmx1024m" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="educationprocess" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="educationprocess" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="moduleName" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Application.ContentDeepExtractor" />
+      <item index="1" class="java.lang.String" itemvalue="Application.CASHtmlImgConvert" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Test10_split" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ContentDeepExtractor (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.streamingExample" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.streamingExample" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ContentDeepExtractor" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ContentDeepExtractor (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ContentDeepExtractor" />
+        <item index="4" class="java.lang.String" itemvalue="Application.CASHtmlImgConvert" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06866ddf-da28-43a3-bb47-e868c3ecb02f" name="Default" comment="" />
+      <created>1496728759031</created>
+      <option name="number" value="Default" />
+      <updated>1496728759031</updated>
+      <workItem from="1496728760320" duration="9029000" />
+      <workItem from="1496916772767" duration="2772000" />
+      <workItem from="1496973515359" duration="24104000" />
+      <workItem from="1497057102810" duration="6160000" />
+      <workItem from="1497187326520" duration="3590000" />
+      <workItem from="1497230899190" duration="14449000" />
+      <workItem from="1497318604309" duration="2536000" />
+      <workItem from="1497405800006" duration="1328000" />
+      <workItem from="1497491244893" duration="10472000" />
+      <workItem from="1497578473744" duration="16111000" />
+      <workItem from="1497832292431" duration="7460000" />
+      <workItem from="1497853826751" duration="5030000" />
+      <workItem from="1497918742591" duration="17549000" />
+      <workItem from="1498005442544" duration="16982000" />
+      <workItem from="1498094591056" duration="7186000" />
+      <workItem from="1498103858162" duration="985000" />
+      <workItem from="1498183567425" duration="15355000" />
+      <workItem from="1498442033457" duration="12760000" />
+      <workItem from="1498467374947" duration="10818000" />
+      <workItem from="1498527953772" duration="13154000" />
+      <workItem from="1499053236568" duration="3081000" />
+      <workItem from="1499420615749" duration="173000" />
+      <workItem from="1499739459085" duration="1820000" />
+      <workItem from="1499824042882" duration="915000" />
+      <workItem from="1499831754794" duration="1656000" />
+      <workItem from="1499942790160" duration="708000" />
+      <workItem from="1499997565941" duration="8345000" />
+      <workItem from="1500017048716" duration="847000" />
+      <workItem from="1500017931710" duration="115000" />
+      <workItem from="1500018479353" duration="2245000" />
+      <workItem from="1500252417539" duration="19631000" />
+      <workItem from="1500340215621" duration="24614000" />
+      <workItem from="1500455145810" duration="792000" />
+      <workItem from="1500547299592" duration="8000" />
+      <workItem from="1500598582537" duration="22029000" />
+      <workItem from="1500637222740" duration="107000" />
+      <workItem from="1500637370489" duration="184000" />
+      <workItem from="1500637680618" duration="64000" />
+      <workItem from="1500859264299" duration="4979000" />
+      <workItem from="1500945562971" duration="28102000" />
+      <workItem from="1501032409134" duration="19637000" />
+      <workItem from="1501118203238" duration="14076000" />
+      <workItem from="1501151981881" duration="2980000" />
+      <workItem from="1501202604536" duration="13755000" />
+      <workItem from="1501387194045" duration="13122000" />
+      <workItem from="1501464060645" duration="2806000" />
+      <workItem from="1501468373251" duration="9308000" />
+      <workItem from="1501548140720" duration="8617000" />
+      <workItem from="1501576009012" duration="8610000" />
+      <workItem from="1501634031257" duration="8238000" />
+      <workItem from="1501657750501" duration="1820000" />
+      <workItem from="1501752229864" duration="244000" />
+      <workItem from="1501755552730" duration="12354000" />
+      <workItem from="1501811607993" duration="4906000" />
+      <workItem from="1502074659734" duration="14152000" />
+      <workItem from="1502152399060" duration="17311000" />
+      <workItem from="1502242524663" duration="15132000" />
+      <workItem from="1502326402235" duration="23220000" />
+      <workItem from="1502412728869" duration="16735000" />
+      <workItem from="1502452624664" duration="1775000" />
+      <workItem from="1502673328178" duration="10972000" />
+      <workItem from="1502759306198" duration="30000" />
+      <workItem from="1502784631258" duration="1690000" />
+      <workItem from="1502846855742" duration="28482000" />
+      <workItem from="1502931701203" duration="29135000" />
+      <workItem from="1503019485130" duration="9672000" />
+      <workItem from="1503112178892" duration="10816000" />
+      <workItem from="1503277194291" duration="25813000" />
+      <workItem from="1503482207659" duration="114000" />
+      <workItem from="1503633892574" duration="1952000" />
+    </task>
+    <task id="LOCAL-00020" summary="添加 Unirest bonecp数据库连接池 依赖">
+      <created>1500347233682</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1500347233682</updated>
+    </task>
+    <task id="LOCAL-00021" summary="添加 基于MMR模型的提取文章摘要">
+      <created>1500347325512</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1500347325512</updated>
+    </task>
+    <task id="LOCAL-00022" summary="数据库连接池">
+      <created>1500347440928</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1500347440928</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Boson提取摘要，没实现">
+      <created>1500347675199</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1500347675199</updated>
+    </task>
+    <task id="LOCAL-00024" summary="更改目录">
+      <created>1500347739013</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1500347739013</updated>
+    </task>
+    <task id="LOCAL-00025" summary="spark 2改写主程序">
+      <created>1500347824615</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1500347824615</updated>
+    </task>
+    <task id="LOCAL-00026" summary="HanLp提取摘要">
+      <created>1500347875104</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1500347875104</updated>
+    </task>
+    <task id="LOCAL-00027" summary="封装数据写入MySQL程序">
+      <created>1500372974216</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1500372974216</updated>
+    </task>
+    <task id="LOCAL-00028" summary="主程序更改">
+      <created>1500373016601</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1500373016601</updated>
+    </task>
+    <task id="LOCAL-00029" summary="新摘要程序">
+      <created>1500373061005</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1500373061005</updated>
+    </task>
+    <task id="LOCAL-00030" summary="添加数据库连接池">
+      <created>1500373100243</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1500373100243</updated>
+    </task>
+    <task id="LOCAL-00031" summary="streaming打印数据样例">
+      <created>1500373154814</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1500373154814</updated>
+    </task>
+    <task id="LOCAL-00032" summary="....">
+      <created>1500613898024</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1500613898024</updated>
+    </task>
+    <task id="LOCAL-00033" summary="添加词库">
+      <created>1500636063584</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1500636063584</updated>
+    </task>
+    <task id="LOCAL-00034" summary="word分词">
+      <created>1500636096250</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1500636096250</updated>
+    </task>
+    <task id="LOCAL-00035" summary="word分词">
+      <created>1500637725497</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1500637725497</updated>
+    </task>
+    <task id="LOCAL-00036" summary="。。">
+      <created>1500982337794</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1500982337794</updated>
+    </task>
+    <task id="LOCAL-00037" summary="存入ES">
+      <created>1501064716556</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1501064716556</updated>
+    </task>
+    <task id="LOCAL-00038" summary="添加了过滤短文章方法">
+      <created>1501064834419</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1501064834419</updated>
+    </task>
+    <task id="LOCAL-00039" summary="实验示例">
+      <created>1501064881341</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1501064881341</updated>
+    </task>
+    <task id="LOCAL-00040" summary="更改返回摘要句子的字符串拼接方式">
+      <created>1501064982069</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1501064982069</updated>
+    </task>
+    <task id="LOCAL-00041" summary="分析摘要时对原文本replace无关数据">
+      <created>1501065097167</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1501065097167</updated>
+    </task>
+    <task id="LOCAL-00042" summary="数据库连接池">
+      <created>1501065121561</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1501065121561</updated>
+    </task>
+    <task id="LOCAL-00043" summary="添加replace字段">
+      <created>1501068382239</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1501068382239</updated>
+    </task>
+    <task id="LOCAL-00044" summary="去掉摘要  清洗context_text">
+      <created>1501154949040</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1501154949040</updated>
+    </task>
+    <task id="LOCAL-00045" summary="测试数据，文本相似的数据">
+      <created>1501406578372</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1501406578372</updated>
+    </task>
+    <task id="LOCAL-00046" summary="基本无修改">
+      <created>1501406636143</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1501406636143</updated>
+    </task>
+    <task id="LOCAL-00047" summary="simhash测试程序">
+      <created>1501406673098</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1501406673098</updated>
+    </task>
+    <task id="LOCAL-00048" summary="添加停用词">
+      <created>1501548331147</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1501548331147</updated>
+    </task>
+    <task id="LOCAL-00049" summary="添加自定义字典">
+      <created>1501548359827</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1501548359827</updated>
+    </task>
+    <task id="LOCAL-00050" summary="无改动">
+      <created>1501548403157</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1501548403158</updated>
+    </task>
+    <task id="LOCAL-00051" summary="新增词典">
+      <created>1501581692299</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1501581692308</updated>
+    </task>
+    <task id="LOCAL-00052" summary="新增品牌内容">
+      <created>1501584729780</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1501584729780</updated>
+    </task>
+    <task id="LOCAL-00053" summary="change a little">
+      <created>1501584797322</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1501584797322</updated>
+    </task>
+    <task id="LOCAL-00054" summary="主程序修改">
+      <created>1501584846869</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1501584846869</updated>
+    </task>
+    <task id="LOCAL-00055" summary="移除hanlp的maven依赖，直接将hanlp源码添加，并修改源码，过滤词性，只留取名词和术语">
+      <created>1501585099974</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1501585099974</updated>
+    </task>
+    <task id="LOCAL-00056" summary="添加新词">
+      <created>1501656201491</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1501656201536</updated>
+    </task>
+    <task id="LOCAL-00057" summary="添加解析搜狗字典的类">
+      <created>1501656436126</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1501656436126</updated>
+    </task>
+    <task id="LOCAL-00058" summary="添加content_html清洗规则">
+      <created>1501836248034</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1501836248049</updated>
+    </task>
+    <task id="LOCAL-00059" summary="添加content_html清洗规则">
+      <created>1502449771818</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1502449771819</updated>
+    </task>
+    <task id="LOCAL-00060" summary="文件更新">
+      <created>1503022274090</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1503022274091</updated>
+    </task>
+    <task id="LOCAL-00061" summary="主程序更改使用新的清洗算法">
+      <created>1503022377891</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1503022377891</updated>
+    </task>
+    <task id="LOCAL-00062" summary="获取html中img标签的src属性">
+      <created>1503022455161</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1503022455161</updated>
+    </task>
+    <task id="LOCAL-00063" summary="新的html清洗算法">
+      <created>1503022497898</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1503022497898</updated>
+    </task>
+    <task id="LOCAL-00064" summary="other">
+      <created>1503022552707</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1503022552707</updated>
+    </task>
+    <task id="LOCAL-00065" summary="other">
+      <created>1503304797777</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1503304797786</updated>
+    </task>
+    <task id="LOCAL-00066" summary="A slightly modified">
+      <created>1503305171022</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1503305171022</updated>
+    </task>
+    <task id="LOCAL-00067" summary="html结构数据清洗">
+      <created>1503305616014</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1503305616015</updated>
+    </task>
+    <task id="LOCAL-00068" summary="获取&lt;img&gt;标签内容">
+      <created>1503307535428</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1503307535428</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="645719000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7034632" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21055438" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23809524" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.754329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50541127" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="数据库连接池" />
+    <MESSAGE value="添加replace字段" />
+    <MESSAGE value="去掉摘要  清洗context_text" />
+    <MESSAGE value="测试数据，文本相似的数据" />
+    <MESSAGE value="基本无修改" />
+    <MESSAGE value="simhash测试程序" />
+    <MESSAGE value="添加停用词" />
+    <MESSAGE value="添加自定义字典" />
+    <MESSAGE value="无改动" />
+    <MESSAGE value="新增词典" />
+    <MESSAGE value="新增品牌内容" />
+    <MESSAGE value="change a little" />
+    <MESSAGE value="主程序修改" />
+    <MESSAGE value="移除hanlp的maven依赖，直接将hanlp源码添加，并修改源码，过滤词性，只留取名词和术语" />
+    <MESSAGE value="添加新词" />
+    <MESSAGE value="添加解析搜狗字典的类" />
+    <MESSAGE value="添加content_html清洗规则" />
+    <MESSAGE value="文件更新" />
+    <MESSAGE value="主程序更改使用新的清洗算法" />
+    <MESSAGE value="获取html中img标签的src属性" />
+    <MESSAGE value="新的html清洗算法" />
+    <MESSAGE value="other" />
+    <MESSAGE value="A slightly modified" />
+    <MESSAGE value="html结构数据清洗" />
+    <MESSAGE value="获取&lt;img&gt;标签内容" />
+    <option name="LAST_COMMIT_MESSAGE" value="获取&lt;img&gt;标签内容" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="33" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/ContentDeepExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/Summary/NewsSummary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33673468">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hankcs/hanlp/seg/Segment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29497206">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hankcs/hanlp/summary/TextRankKeyword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04916201">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hankcs/hanlp/summary/KeywordExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27039105">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dictionary/other/CharTable.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4861" column="3" selection-start-line="4861" selection-start-column="3" selection-end-line="4861" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dictionary/custom/CustomDictionary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3590" column="5" selection-start-line="3590" selection-start-column="5" selection-end-line="3590" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hankcs/hanlp/HanLP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="569" column="5" selection-start-line="569" selection-start-column="5" selection-end-line="569" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/sougou/新词.scel">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54404944">
+          <caret line="16" column="125" selection-start-line="16" selection-start-column="125" selection-end-line="16" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/sougou/新词.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-234.46146">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dictionary/stopwords.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3335" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="3378" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/IKAnalyzer.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/demo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3653618">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/simhashJson.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="839" selection-start-line="1" selection-start-column="839" selection-end-line="1" selection-end-column="839" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.8.3/jsoup-1.8.3-sources.jar!/org/jsoup/parser/Tag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.8.3/jsoup-1.8.3-sources.jar!/org/jsoup/Jsoup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_111/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21585903">
+          <caret line="1429" column="0" selection-start-line="1429" selection-start-column="0" selection-end-line="1429" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/DB/data2MySQL.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6049926">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1260364">
+          <caret line="462" column="0" selection-start-line="462" selection-start-column="0" selection-end-line="462" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessSimhash.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7474892">
+          <caret line="87" column="3" selection-start-line="80" selection-start-column="2" selection-end-line="87" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.8.3/jsoup-1.8.3-sources.jar!/org/jsoup/nodes/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessnoetlToDB.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5037594">
+          <caret line="57" column="99" selection-start-line="57" selection-start-column="99" selection-end-line="57" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/replaceContextProcess.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63910615">
+          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9094972">
+          <caret line="50" column="63" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/process/streamingProcessNew.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8849162">
+          <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/Es/IndexArticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.750838">
+          <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/Util/ConnectionPool.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18882681">
+          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/CASHtmlImgConvert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.8.3/jsoup-1.8.3-sources.jar!/org/jsoup/nodes/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3305785">
+          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.8.3/jsoup-1.8.3-sources.jar!/org/jsoup/nodes/Element.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="970" column="0" selection-start-line="970" selection-start-column="0" selection-end-line="970" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/replaceContent_html.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3671037">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/datapark/process/education/reg/ContentDeepExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.515625">
+          <caret line="285" column="21" selection-start-line="285" selection-start-column="21" selection-end-line="285" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.11.81</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>educationprocess</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

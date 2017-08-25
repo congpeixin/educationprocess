@@ -9535,3 +9535,388 @@ java.lang.OutOfMemoryError: unable to create new native thread
 2017-08-19 13:00:21,614 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 0.0 (TID 0). 916 bytes result sent to driver
 2017-08-19 13:00:21,620 [task-result-getter-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 0.0 (TID 0) in 27281 ms on localhost (1/2)
 2017-08-19 13:00:22,011 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503118822000 ms
+2017-08-23 17:57:47,588 [main] INFO  [org.apache.spark.SparkContext] - Running Spark version 2.0.0
+2017-08-23 17:57:50,529 [main] WARN  [org.apache.hadoop.util.NativeCodeLoader] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-08-23 17:57:51,978 [main] INFO  [org.apache.spark.SecurityManager] - Changing view acls to: cluster
+2017-08-23 17:57:51,981 [main] INFO  [org.apache.spark.SecurityManager] - Changing modify acls to: cluster
+2017-08-23 17:57:51,983 [main] INFO  [org.apache.spark.SecurityManager] - Changing view acls groups to: 
+2017-08-23 17:57:51,985 [main] INFO  [org.apache.spark.SecurityManager] - Changing modify acls groups to: 
+2017-08-23 17:57:51,987 [main] INFO  [org.apache.spark.SecurityManager] - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(cluster); groups with view permissions: Set(); users  with modify permissions: Set(cluster); groups with modify permissions: Set()
+2017-08-23 17:57:52,945 [main] INFO  [org.apache.spark.util.Utils] - Successfully started service 'sparkDriver' on port 50666.
+2017-08-23 17:57:52,994 [main] INFO  [org.apache.spark.SparkEnv] - Registering MapOutputTracker
+2017-08-23 17:57:53,063 [main] ERROR [org.apache.spark.SparkContext] - Error initializing SparkContext.
+java.lang.IllegalArgumentException: System memory 259522560 must be at least 471859200. Please increase heap size using the --driver-memory option or spark.driver.memory in Spark configuration.
+	at org.apache.spark.memory.UnifiedMemoryManager$.getMaxMemory(UnifiedMemoryManager.scala:212) ~[spark-core_2.11-2.0.0.jar:2.0.0]
+	at org.apache.spark.memory.UnifiedMemoryManager$.apply(UnifiedMemoryManager.scala:194) ~[spark-core_2.11-2.0.0.jar:2.0.0]
+	at org.apache.spark.SparkEnv$.create(SparkEnv.scala:308) ~[spark-core_2.11-2.0.0.jar:2.0.0]
+	at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:165) ~[spark-core_2.11-2.0.0.jar:2.0.0]
+	at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:259) ~[spark-core_2.11-2.0.0.jar:2.0.0]
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:423) ~[spark-core_2.11-2.0.0.jar:2.0.0]
+	at org.apache.spark.streaming.StreamingContext$.createNewSparkContext(StreamingContext.scala:836) [spark-streaming_2.11-2.0.0.jar:2.0.0]
+	at org.apache.spark.streaming.StreamingContext.<init>(StreamingContext.scala:84) [spark-streaming_2.11-2.0.0.jar:2.0.0]
+	at streamingExample$.main(streamingExample.scala:19) [test-classes/:na]
+	at streamingExample.main(streamingExample.scala) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_111]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_111]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_111]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_111]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+2017-08-23 17:57:53,070 [main] INFO  [org.apache.spark.SparkContext] - Successfully stopped SparkContext
+2017-08-23 17:57:53,075 [Thread-0] INFO  [org.apache.spark.util.ShutdownHookManager] - Shutdown hook called
+2017-08-23 17:58:30,277 [main] INFO  [org.apache.spark.SparkContext] - Running Spark version 2.0.0
+2017-08-23 17:58:30,493 [main] WARN  [org.apache.hadoop.util.NativeCodeLoader] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-08-23 17:58:30,589 [main] INFO  [org.apache.spark.SecurityManager] - Changing view acls to: cluster
+2017-08-23 17:58:30,590 [main] INFO  [org.apache.spark.SecurityManager] - Changing modify acls to: cluster
+2017-08-23 17:58:30,591 [main] INFO  [org.apache.spark.SecurityManager] - Changing view acls groups to: 
+2017-08-23 17:58:30,591 [main] INFO  [org.apache.spark.SecurityManager] - Changing modify acls groups to: 
+2017-08-23 17:58:30,592 [main] INFO  [org.apache.spark.SecurityManager] - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(cluster); groups with view permissions: Set(); users  with modify permissions: Set(cluster); groups with modify permissions: Set()
+2017-08-23 17:58:31,350 [main] INFO  [org.apache.spark.util.Utils] - Successfully started service 'sparkDriver' on port 50739.
+2017-08-23 17:58:31,371 [main] INFO  [org.apache.spark.SparkEnv] - Registering MapOutputTracker
+2017-08-23 17:58:31,409 [main] INFO  [org.apache.spark.SparkEnv] - Registering BlockManagerMaster
+2017-08-23 17:58:31,425 [main] INFO  [org.apache.spark.storage.DiskBlockManager] - Created local directory at C:\Users\DN\AppData\Local\Temp\blockmgr-3e648a04-0374-42d5-80ba-c112663f0d70
+2017-08-23 17:58:31,476 [main] INFO  [org.apache.spark.storage.memory.MemoryStore] - MemoryStore started with capacity 413.9 MB
+2017-08-23 17:58:31,550 [main] INFO  [org.apache.spark.SparkEnv] - Registering OutputCommitCoordinator
+2017-08-23 17:58:31,723 [main] INFO  [org.spark_project.jetty.util.log] - Logging initialized @2294ms
+2017-08-23 17:58:31,856 [main] INFO  [org.spark_project.jetty.server.Server] - jetty-9.2.z-SNAPSHOT
+2017-08-23 17:58:31,873 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1c60324{/jobs,null,AVAILABLE}
+2017-08-23 17:58:31,874 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1ae31b0{/jobs/json,null,AVAILABLE}
+2017-08-23 17:58:31,874 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1a534b0{/jobs/job,null,AVAILABLE}
+2017-08-23 17:58:31,874 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@10ca692{/jobs/job/json,null,AVAILABLE}
+2017-08-23 17:58:31,874 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@104774{/stages,null,AVAILABLE}
+2017-08-23 17:58:31,875 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@b3d0f7{/stages/json,null,AVAILABLE}
+2017-08-23 17:58:31,875 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@517165{/stages/stage,null,AVAILABLE}
+2017-08-23 17:58:31,875 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@e3760b{/stages/stage/json,null,AVAILABLE}
+2017-08-23 17:58:31,875 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@66a204{/stages/pool,null,AVAILABLE}
+2017-08-23 17:58:31,875 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@60f3d7{/stages/pool/json,null,AVAILABLE}
+2017-08-23 17:58:31,876 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@17f7be7{/storage,null,AVAILABLE}
+2017-08-23 17:58:31,876 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@f3156d{/storage/json,null,AVAILABLE}
+2017-08-23 17:58:31,876 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1dae9b5{/storage/rdd,null,AVAILABLE}
+2017-08-23 17:58:31,876 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7b5f92{/storage/rdd/json,null,AVAILABLE}
+2017-08-23 17:58:31,876 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@bdb479{/environment,null,AVAILABLE}
+2017-08-23 17:58:31,876 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@3f95fe{/environment/json,null,AVAILABLE}
+2017-08-23 17:58:31,877 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@625ccd{/executors,null,AVAILABLE}
+2017-08-23 17:58:31,877 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7d121c{/executors/json,null,AVAILABLE}
+2017-08-23 17:58:31,877 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1aa6596{/executors/threadDump,null,AVAILABLE}
+2017-08-23 17:58:31,877 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1389cb8{/executors/threadDump/json,null,AVAILABLE}
+2017-08-23 17:58:31,883 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@19a20a6{/static,null,AVAILABLE}
+2017-08-23 17:58:31,884 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@133377b{/,null,AVAILABLE}
+2017-08-23 17:58:31,884 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@183649e{/api,null,AVAILABLE}
+2017-08-23 17:58:31,884 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@fde30a{/stages/stage/kill,null,AVAILABLE}
+2017-08-23 17:58:31,892 [main] INFO  [org.spark_project.jetty.server.ServerConnector] - Started ServerConnector@158ed3c{HTTP/1.1}{0.0.0.0:4040}
+2017-08-23 17:58:31,892 [main] INFO  [org.spark_project.jetty.server.Server] - Started @2463ms
+2017-08-23 17:58:31,892 [main] INFO  [org.apache.spark.util.Utils] - Successfully started service 'SparkUI' on port 4040.
+2017-08-23 17:58:31,894 [main] INFO  [org.apache.spark.ui.SparkUI] - Bound SparkUI to 0.0.0.0, and started at http://192.168.31.111:4040
+2017-08-23 17:58:32,077 [main] INFO  [org.apache.spark.executor.Executor] - Starting executor ID driver on host localhost
+2017-08-23 17:58:32,107 [main] INFO  [org.apache.spark.util.Utils] - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50752.
+2017-08-23 17:58:32,108 [main] INFO  [org.apache.spark.network.netty.NettyBlockTransferService] - Server created on 192.168.31.111:50752
+2017-08-23 17:58:32,111 [main] INFO  [org.apache.spark.storage.BlockManagerMaster] - Registering BlockManager BlockManagerId(driver, 192.168.31.111, 50752)
+2017-08-23 17:58:32,114 [dispatcher-event-loop-2] INFO  [org.apache.spark.storage.BlockManagerMasterEndpoint] - Registering block manager 192.168.31.111:50752 with 413.9 MB RAM, BlockManagerId(driver, 192.168.31.111, 50752)
+2017-08-23 17:58:32,117 [main] INFO  [org.apache.spark.storage.BlockManagerMaster] - Registered BlockManager BlockManagerId(driver, 192.168.31.111, 50752)
+2017-08-23 17:58:32,430 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@37595f{/metrics/json,null,AVAILABLE}
+2017-08-23 17:58:34,145 [streaming-start] INFO  [org.apache.spark.streaming.kafka.DirectKafkaInputDStream] - Slide time = 2000 ms
+2017-08-23 17:58:34,146 [streaming-start] INFO  [org.apache.spark.streaming.kafka.DirectKafkaInputDStream] - Storage level = Serialized 1x Replicated
+2017-08-23 17:58:34,146 [streaming-start] INFO  [org.apache.spark.streaming.kafka.DirectKafkaInputDStream] - Checkpoint interval = null
+2017-08-23 17:58:34,147 [streaming-start] INFO  [org.apache.spark.streaming.kafka.DirectKafkaInputDStream] - Remember interval = 2000 ms
+2017-08-23 17:58:34,148 [streaming-start] INFO  [org.apache.spark.streaming.kafka.DirectKafkaInputDStream] - Initialized and validated org.apache.spark.streaming.kafka.DirectKafkaInputDStream@3ffe41
+2017-08-23 17:58:34,148 [streaming-start] INFO  [org.apache.spark.streaming.dstream.MappedDStream] - Slide time = 2000 ms
+2017-08-23 17:58:34,148 [streaming-start] INFO  [org.apache.spark.streaming.dstream.MappedDStream] - Storage level = Serialized 1x Replicated
+2017-08-23 17:58:34,148 [streaming-start] INFO  [org.apache.spark.streaming.dstream.MappedDStream] - Checkpoint interval = null
+2017-08-23 17:58:34,148 [streaming-start] INFO  [org.apache.spark.streaming.dstream.MappedDStream] - Remember interval = 2000 ms
+2017-08-23 17:58:34,148 [streaming-start] INFO  [org.apache.spark.streaming.dstream.MappedDStream] - Initialized and validated org.apache.spark.streaming.dstream.MappedDStream@271102
+2017-08-23 17:58:34,148 [streaming-start] INFO  [org.apache.spark.streaming.dstream.ForEachDStream] - Slide time = 2000 ms
+2017-08-23 17:58:34,149 [streaming-start] INFO  [org.apache.spark.streaming.dstream.ForEachDStream] - Storage level = Serialized 1x Replicated
+2017-08-23 17:58:34,149 [streaming-start] INFO  [org.apache.spark.streaming.dstream.ForEachDStream] - Checkpoint interval = null
+2017-08-23 17:58:34,149 [streaming-start] INFO  [org.apache.spark.streaming.dstream.ForEachDStream] - Remember interval = 2000 ms
+2017-08-23 17:58:34,149 [streaming-start] INFO  [org.apache.spark.streaming.dstream.ForEachDStream] - Initialized and validated org.apache.spark.streaming.dstream.ForEachDStream@1e2da46
+2017-08-23 17:58:34,228 [streaming-start] INFO  [org.apache.spark.streaming.util.RecurringTimer] - Started timer for JobGenerator at time 1503482316000
+2017-08-23 17:58:34,229 [streaming-start] INFO  [org.apache.spark.streaming.scheduler.JobGenerator] - Started JobGenerator at 1503482316000 ms
+2017-08-23 17:58:34,231 [streaming-start] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Started JobScheduler
+2017-08-23 17:58:34,232 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@136207f{/streaming,null,AVAILABLE}
+2017-08-23 17:58:34,233 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1fdecce{/streaming/json,null,AVAILABLE}
+2017-08-23 17:58:34,233 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@10aeb20{/streaming/batch,null,AVAILABLE}
+2017-08-23 17:58:34,233 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1da0b12{/streaming/batch/json,null,AVAILABLE}
+2017-08-23 17:58:34,234 [main] INFO  [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1b08632{/static/streaming,null,AVAILABLE}
+2017-08-23 17:58:34,235 [main] INFO  [org.apache.spark.streaming.StreamingContext] - StreamingContext started
+2017-08-23 17:58:36,257 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503482316000 ms
+2017-08-23 17:58:36,266 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Starting job streaming job 1503482316000 ms.0 from job set of time 1503482316000 ms
+2017-08-23 17:58:36,306 [streaming-job-executor-0] INFO  [org.apache.spark.SparkContext] - Starting job: foreach at streamingExample.scala:31
+2017-08-23 17:58:36,332 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Got job 0 (foreach at streamingExample.scala:31) with 2 output partitions
+2017-08-23 17:58:36,333 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Final stage: ResultStage 0 (foreach at streamingExample.scala:31)
+2017-08-23 17:58:36,334 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Parents of final stage: List()
+2017-08-23 17:58:36,337 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Missing parents: List()
+2017-08-23 17:58:36,377 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting ResultStage 0 (MapPartitionsRDD[1] at map at streamingExample.scala:30), which has no missing parents
+2017-08-23 17:58:36,506 [dag-scheduler-event-loop] WARN  [org.apache.spark.util.SizeEstimator] - Failed to check whether UseCompressedOops is set; assuming yes
+2017-08-23 17:58:36,516 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_0 stored as values in memory (estimated size 3.0 KB, free 413.9 MB)
+2017-08-23 17:58:36,586 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_0_piece0 stored as bytes in memory (estimated size 1841.0 B, free 413.9 MB)
+2017-08-23 17:58:36,589 [dispatcher-event-loop-0] INFO  [org.apache.spark.storage.BlockManagerInfo] - Added broadcast_0_piece0 in memory on 192.168.31.111:50752 (size: 1841.0 B, free: 413.9 MB)
+2017-08-23 17:58:36,594 [dag-scheduler-event-loop] INFO  [org.apache.spark.SparkContext] - Created broadcast 0 from broadcast at DAGScheduler.scala:1012
+2017-08-23 17:58:36,601 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at map at streamingExample.scala:30)
+2017-08-23 17:58:36,605 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Adding task set 0.0 with 2 tasks
+2017-08-23 17:58:36,690 [dispatcher-event-loop-1] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0, ANY, 5646 bytes)
+2017-08-23 17:58:36,695 [dispatcher-event-loop-1] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1, ANY, 5646 bytes)
+2017-08-23 17:58:36,702 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Running task 0.0 in stage 0.0 (TID 0)
+2017-08-23 17:58:36,702 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Running task 1.0 in stage 0.0 (TID 1)
+2017-08-23 17:58:36,748 [Executor task launch worker-1] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 998 is the same as ending offset skipping test07 1
+2017-08-23 17:58:36,748 [Executor task launch worker-0] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 976 is the same as ending offset skipping test07 0
+2017-08-23 17:58:36,773 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Finished task 1.0 in stage 0.0 (TID 1). 843 bytes result sent to driver
+2017-08-23 17:58:36,773 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 0.0 (TID 0). 843 bytes result sent to driver
+2017-08-23 17:58:36,781 [task-result-getter-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 0.0 (TID 0) in 111 ms on localhost (1/2)
+2017-08-23 17:58:36,782 [task-result-getter-1] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 1.0 in stage 0.0 (TID 1) in 89 ms on localhost (2/2)
+2017-08-23 17:58:36,783 [task-result-getter-1] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2017-08-23 17:58:36,787 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - ResultStage 0 (foreach at streamingExample.scala:31) finished in 0.154 s
+2017-08-23 17:58:36,793 [streaming-job-executor-0] INFO  [org.apache.spark.scheduler.DAGScheduler] - Job 0 finished: foreach at streamingExample.scala:31, took 0.486575 s
+2017-08-23 17:58:36,801 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Finished job streaming job 1503482316000 ms.0 from job set of time 1503482316000 ms
+2017-08-23 17:58:36,802 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Total delay: 0.799 s for time 1503482316000 ms (execution: 0.538 s)
+2017-08-23 17:58:36,813 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.ReceivedBlockTracker] - Deleting batches: 
+2017-08-23 17:58:36,820 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.InputInfoTracker] - remove old batch metadata: 
+2017-08-23 17:58:38,017 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503482318000 ms
+2017-08-23 17:58:38,018 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Starting job streaming job 1503482318000 ms.0 from job set of time 1503482318000 ms
+2017-08-23 17:58:38,025 [streaming-job-executor-0] INFO  [org.apache.spark.SparkContext] - Starting job: foreach at streamingExample.scala:31
+2017-08-23 17:58:38,026 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Got job 1 (foreach at streamingExample.scala:31) with 2 output partitions
+2017-08-23 17:58:38,027 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Final stage: ResultStage 1 (foreach at streamingExample.scala:31)
+2017-08-23 17:58:38,027 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Parents of final stage: List()
+2017-08-23 17:58:38,027 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Missing parents: List()
+2017-08-23 17:58:38,028 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting ResultStage 1 (MapPartitionsRDD[3] at map at streamingExample.scala:30), which has no missing parents
+2017-08-23 17:58:38,030 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_1 stored as values in memory (estimated size 3.0 KB, free 413.9 MB)
+2017-08-23 17:58:38,034 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_1_piece0 stored as bytes in memory (estimated size 1840.0 B, free 413.9 MB)
+2017-08-23 17:58:38,035 [dispatcher-event-loop-3] INFO  [org.apache.spark.storage.BlockManagerInfo] - Added broadcast_1_piece0 in memory on 192.168.31.111:50752 (size: 1840.0 B, free: 413.9 MB)
+2017-08-23 17:58:38,036 [dag-scheduler-event-loop] INFO  [org.apache.spark.SparkContext] - Created broadcast 1 from broadcast at DAGScheduler.scala:1012
+2017-08-23 17:58:38,036 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting 2 missing tasks from ResultStage 1 (MapPartitionsRDD[3] at map at streamingExample.scala:30)
+2017-08-23 17:58:38,036 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Adding task set 1.0 with 2 tasks
+2017-08-23 17:58:38,039 [dispatcher-event-loop-2] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 0.0 in stage 1.0 (TID 2, localhost, partition 0, ANY, 5646 bytes)
+2017-08-23 17:58:38,040 [dispatcher-event-loop-2] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 1.0 in stage 1.0 (TID 3, localhost, partition 1, ANY, 5646 bytes)
+2017-08-23 17:58:38,041 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Running task 1.0 in stage 1.0 (TID 3)
+2017-08-23 17:58:38,041 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Running task 0.0 in stage 1.0 (TID 2)
+2017-08-23 17:58:38,044 [Executor task launch worker-0] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 998 is the same as ending offset skipping test07 1
+2017-08-23 17:58:38,044 [Executor task launch worker-1] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 976 is the same as ending offset skipping test07 0
+2017-08-23 17:58:38,045 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 1.0 in stage 1.0 (TID 3). 677 bytes result sent to driver
+2017-08-23 17:58:38,045 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 1.0 (TID 2). 677 bytes result sent to driver
+2017-08-23 17:58:38,046 [task-result-getter-2] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 1.0 in stage 1.0 (TID 3) in 7 ms on localhost (1/2)
+2017-08-23 17:58:38,047 [task-result-getter-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 1.0 (TID 2) in 10 ms on localhost (2/2)
+2017-08-23 17:58:38,047 [task-result-getter-3] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2017-08-23 17:58:38,047 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - ResultStage 1 (foreach at streamingExample.scala:31) finished in 0.010 s
+2017-08-23 17:58:38,047 [streaming-job-executor-0] INFO  [org.apache.spark.scheduler.DAGScheduler] - Job 1 finished: foreach at streamingExample.scala:31, took 0.021945 s
+2017-08-23 17:58:38,048 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Finished job streaming job 1503482318000 ms.0 from job set of time 1503482318000 ms
+2017-08-23 17:58:38,048 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Total delay: 0.048 s for time 1503482318000 ms (execution: 0.030 s)
+2017-08-23 17:58:38,050 [JobGenerator] INFO  [org.apache.spark.rdd.MapPartitionsRDD] - Removing RDD 1 from persistence list
+2017-08-23 17:58:38,059 [JobGenerator] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Removing RDD 0 from persistence list
+2017-08-23 17:58:38,060 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.ReceivedBlockTracker] - Deleting batches: 
+2017-08-23 17:58:38,060 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.InputInfoTracker] - remove old batch metadata: 
+2017-08-23 17:58:38,061 [block-manager-slave-async-thread-pool-0] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 1
+2017-08-23 17:58:38,062 [block-manager-slave-async-thread-pool-1] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 0
+2017-08-23 17:58:40,024 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503482320000 ms
+2017-08-23 17:58:40,026 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Starting job streaming job 1503482320000 ms.0 from job set of time 1503482320000 ms
+2017-08-23 17:58:40,039 [streaming-job-executor-0] INFO  [org.apache.spark.SparkContext] - Starting job: foreach at streamingExample.scala:31
+2017-08-23 17:58:40,042 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Got job 2 (foreach at streamingExample.scala:31) with 2 output partitions
+2017-08-23 17:58:40,043 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Final stage: ResultStage 2 (foreach at streamingExample.scala:31)
+2017-08-23 17:58:40,043 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Parents of final stage: List()
+2017-08-23 17:58:40,043 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Missing parents: List()
+2017-08-23 17:58:40,045 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting ResultStage 2 (MapPartitionsRDD[5] at map at streamingExample.scala:30), which has no missing parents
+2017-08-23 17:58:40,049 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_2 stored as values in memory (estimated size 3.0 KB, free 413.9 MB)
+2017-08-23 17:58:40,052 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_2_piece0 stored as bytes in memory (estimated size 1842.0 B, free 413.9 MB)
+2017-08-23 17:58:40,053 [dispatcher-event-loop-0] INFO  [org.apache.spark.storage.BlockManagerInfo] - Added broadcast_2_piece0 in memory on 192.168.31.111:50752 (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:40,054 [dag-scheduler-event-loop] INFO  [org.apache.spark.SparkContext] - Created broadcast 2 from broadcast at DAGScheduler.scala:1012
+2017-08-23 17:58:40,055 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting 2 missing tasks from ResultStage 2 (MapPartitionsRDD[5] at map at streamingExample.scala:30)
+2017-08-23 17:58:40,055 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Adding task set 2.0 with 2 tasks
+2017-08-23 17:58:40,058 [dispatcher-event-loop-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 0.0 in stage 2.0 (TID 4, localhost, partition 0, ANY, 5646 bytes)
+2017-08-23 17:58:40,061 [dispatcher-event-loop-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 1.0 in stage 2.0 (TID 5, localhost, partition 1, ANY, 5646 bytes)
+2017-08-23 17:58:40,062 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Running task 0.0 in stage 2.0 (TID 4)
+2017-08-23 17:58:40,062 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Running task 1.0 in stage 2.0 (TID 5)
+2017-08-23 17:58:40,067 [Executor task launch worker-1] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 976 is the same as ending offset skipping test07 0
+2017-08-23 17:58:40,067 [Executor task launch worker-0] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 998 is the same as ending offset skipping test07 1
+2017-08-23 17:58:40,069 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 2.0 (TID 4). 756 bytes result sent to driver
+2017-08-23 17:58:40,069 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 1.0 in stage 2.0 (TID 5). 756 bytes result sent to driver
+2017-08-23 17:58:40,070 [task-result-getter-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 2.0 (TID 4) in 14 ms on localhost (1/2)
+2017-08-23 17:58:40,071 [task-result-getter-1] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 1.0 in stage 2.0 (TID 5) in 11 ms on localhost (2/2)
+2017-08-23 17:58:40,071 [task-result-getter-1] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Removed TaskSet 2.0, whose tasks have all completed, from pool 
+2017-08-23 17:58:40,071 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - ResultStage 2 (foreach at streamingExample.scala:31) finished in 0.015 s
+2017-08-23 17:58:40,072 [streaming-job-executor-0] INFO  [org.apache.spark.scheduler.DAGScheduler] - Job 2 finished: foreach at streamingExample.scala:31, took 0.032395 s
+2017-08-23 17:58:40,073 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Finished job streaming job 1503482320000 ms.0 from job set of time 1503482320000 ms
+2017-08-23 17:58:40,073 [JobGenerator] INFO  [org.apache.spark.rdd.MapPartitionsRDD] - Removing RDD 3 from persistence list
+2017-08-23 17:58:40,073 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Total delay: 0.073 s for time 1503482320000 ms (execution: 0.048 s)
+2017-08-23 17:58:40,074 [block-manager-slave-async-thread-pool-4] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 3
+2017-08-23 17:58:40,074 [JobGenerator] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Removing RDD 2 from persistence list
+2017-08-23 17:58:40,074 [block-manager-slave-async-thread-pool-1] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 2
+2017-08-23 17:58:40,074 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.ReceivedBlockTracker] - Deleting batches: 
+2017-08-23 17:58:40,075 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.InputInfoTracker] - remove old batch metadata: 1503482316000 ms
+2017-08-23 17:58:42,021 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503482322000 ms
+2017-08-23 17:58:42,023 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Starting job streaming job 1503482322000 ms.0 from job set of time 1503482322000 ms
+2017-08-23 17:58:42,035 [streaming-job-executor-0] INFO  [org.apache.spark.SparkContext] - Starting job: foreach at streamingExample.scala:31
+2017-08-23 17:58:42,038 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Got job 3 (foreach at streamingExample.scala:31) with 2 output partitions
+2017-08-23 17:58:42,038 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Final stage: ResultStage 3 (foreach at streamingExample.scala:31)
+2017-08-23 17:58:42,038 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Parents of final stage: List()
+2017-08-23 17:58:42,039 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Missing parents: List()
+2017-08-23 17:58:42,040 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting ResultStage 3 (MapPartitionsRDD[7] at map at streamingExample.scala:30), which has no missing parents
+2017-08-23 17:58:42,045 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_3 stored as values in memory (estimated size 3.0 KB, free 413.9 MB)
+2017-08-23 17:58:42,051 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_3_piece0 stored as bytes in memory (estimated size 1842.0 B, free 413.9 MB)
+2017-08-23 17:58:42,052 [dispatcher-event-loop-1] INFO  [org.apache.spark.storage.BlockManagerInfo] - Added broadcast_3_piece0 in memory on 192.168.31.111:50752 (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:42,054 [dag-scheduler-event-loop] INFO  [org.apache.spark.SparkContext] - Created broadcast 3 from broadcast at DAGScheduler.scala:1012
+2017-08-23 17:58:42,055 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting 2 missing tasks from ResultStage 3 (MapPartitionsRDD[7] at map at streamingExample.scala:30)
+2017-08-23 17:58:42,055 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Adding task set 3.0 with 2 tasks
+2017-08-23 17:58:42,059 [dispatcher-event-loop-2] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 0.0 in stage 3.0 (TID 6, localhost, partition 0, ANY, 5647 bytes)
+2017-08-23 17:58:42,060 [dispatcher-event-loop-2] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 1.0 in stage 3.0 (TID 7, localhost, partition 1, ANY, 5647 bytes)
+2017-08-23 17:58:42,061 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Running task 1.0 in stage 3.0 (TID 7)
+2017-08-23 17:58:42,061 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Running task 0.0 in stage 3.0 (TID 6)
+2017-08-23 17:58:42,065 [Executor task launch worker-1] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 998 is the same as ending offset skipping test07 1
+2017-08-23 17:58:42,065 [Executor task launch worker-0] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 976 is the same as ending offset skipping test07 0
+2017-08-23 17:58:42,066 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Finished task 1.0 in stage 3.0 (TID 7). 756 bytes result sent to driver
+2017-08-23 17:58:42,066 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 3.0 (TID 6). 756 bytes result sent to driver
+2017-08-23 17:58:42,067 [task-result-getter-2] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 1.0 in stage 3.0 (TID 7) in 8 ms on localhost (1/2)
+2017-08-23 17:58:42,068 [task-result-getter-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 3.0 (TID 6) in 10 ms on localhost (2/2)
+2017-08-23 17:58:42,068 [task-result-getter-3] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Removed TaskSet 3.0, whose tasks have all completed, from pool 
+2017-08-23 17:58:42,068 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - ResultStage 3 (foreach at streamingExample.scala:31) finished in 0.012 s
+2017-08-23 17:58:42,069 [streaming-job-executor-0] INFO  [org.apache.spark.scheduler.DAGScheduler] - Job 3 finished: foreach at streamingExample.scala:31, took 0.032965 s
+2017-08-23 17:58:42,070 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Finished job streaming job 1503482322000 ms.0 from job set of time 1503482322000 ms
+2017-08-23 17:58:42,070 [JobGenerator] INFO  [org.apache.spark.rdd.MapPartitionsRDD] - Removing RDD 5 from persistence list
+2017-08-23 17:58:42,070 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Total delay: 0.070 s for time 1503482322000 ms (execution: 0.047 s)
+2017-08-23 17:58:42,071 [block-manager-slave-async-thread-pool-4] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 5
+2017-08-23 17:58:42,071 [JobGenerator] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Removing RDD 4 from persistence list
+2017-08-23 17:58:42,071 [block-manager-slave-async-thread-pool-1] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 4
+2017-08-23 17:58:42,072 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.ReceivedBlockTracker] - Deleting batches: 
+2017-08-23 17:58:42,072 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.InputInfoTracker] - remove old batch metadata: 1503482318000 ms
+2017-08-23 17:58:44,021 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503482324000 ms
+2017-08-23 17:58:44,022 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Starting job streaming job 1503482324000 ms.0 from job set of time 1503482324000 ms
+2017-08-23 17:58:44,034 [streaming-job-executor-0] INFO  [org.apache.spark.SparkContext] - Starting job: foreach at streamingExample.scala:31
+2017-08-23 17:58:44,036 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Got job 4 (foreach at streamingExample.scala:31) with 2 output partitions
+2017-08-23 17:58:44,036 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Final stage: ResultStage 4 (foreach at streamingExample.scala:31)
+2017-08-23 17:58:44,037 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Parents of final stage: List()
+2017-08-23 17:58:44,037 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Missing parents: List()
+2017-08-23 17:58:44,038 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting ResultStage 4 (MapPartitionsRDD[9] at map at streamingExample.scala:30), which has no missing parents
+2017-08-23 17:58:44,041 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_4 stored as values in memory (estimated size 3.0 KB, free 413.9 MB)
+2017-08-23 17:58:44,044 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_4_piece0 stored as bytes in memory (estimated size 1842.0 B, free 413.9 MB)
+2017-08-23 17:58:44,046 [dispatcher-event-loop-3] INFO  [org.apache.spark.storage.BlockManagerInfo] - Added broadcast_4_piece0 in memory on 192.168.31.111:50752 (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:44,047 [dag-scheduler-event-loop] INFO  [org.apache.spark.SparkContext] - Created broadcast 4 from broadcast at DAGScheduler.scala:1012
+2017-08-23 17:58:44,047 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting 2 missing tasks from ResultStage 4 (MapPartitionsRDD[9] at map at streamingExample.scala:30)
+2017-08-23 17:58:44,048 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Adding task set 4.0 with 2 tasks
+2017-08-23 17:58:44,051 [dispatcher-event-loop-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 0.0 in stage 4.0 (TID 8, localhost, partition 0, ANY, 5647 bytes)
+2017-08-23 17:58:44,052 [dispatcher-event-loop-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 1.0 in stage 4.0 (TID 9, localhost, partition 1, ANY, 5647 bytes)
+2017-08-23 17:58:44,052 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Running task 0.0 in stage 4.0 (TID 8)
+2017-08-23 17:58:44,052 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Running task 1.0 in stage 4.0 (TID 9)
+2017-08-23 17:58:44,057 [Executor task launch worker-0] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 976 is the same as ending offset skipping test07 0
+2017-08-23 17:58:44,058 [Executor task launch worker-1] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 998 is the same as ending offset skipping test07 1
+2017-08-23 17:58:44,059 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 4.0 (TID 8). 756 bytes result sent to driver
+2017-08-23 17:58:44,059 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Finished task 1.0 in stage 4.0 (TID 9). 756 bytes result sent to driver
+2017-08-23 17:58:44,060 [task-result-getter-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 4.0 (TID 8) in 11 ms on localhost (1/2)
+2017-08-23 17:58:44,061 [task-result-getter-1] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 1.0 in stage 4.0 (TID 9) in 10 ms on localhost (2/2)
+2017-08-23 17:58:44,061 [task-result-getter-1] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Removed TaskSet 4.0, whose tasks have all completed, from pool 
+2017-08-23 17:58:44,061 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - ResultStage 4 (foreach at streamingExample.scala:31) finished in 0.012 s
+2017-08-23 17:58:44,062 [streaming-job-executor-0] INFO  [org.apache.spark.scheduler.DAGScheduler] - Job 4 finished: foreach at streamingExample.scala:31, took 0.027547 s
+2017-08-23 17:58:44,063 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Finished job streaming job 1503482324000 ms.0 from job set of time 1503482324000 ms
+2017-08-23 17:58:44,063 [JobGenerator] INFO  [org.apache.spark.rdd.MapPartitionsRDD] - Removing RDD 7 from persistence list
+2017-08-23 17:58:44,063 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Total delay: 0.063 s for time 1503482324000 ms (execution: 0.041 s)
+2017-08-23 17:58:44,064 [block-manager-slave-async-thread-pool-4] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 7
+2017-08-23 17:58:44,064 [JobGenerator] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Removing RDD 6 from persistence list
+2017-08-23 17:58:44,065 [block-manager-slave-async-thread-pool-1] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 6
+2017-08-23 17:58:44,065 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.ReceivedBlockTracker] - Deleting batches: 
+2017-08-23 17:58:44,065 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.InputInfoTracker] - remove old batch metadata: 1503482320000 ms
+2017-08-23 17:58:46,020 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503482326000 ms
+2017-08-23 17:58:46,022 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Starting job streaming job 1503482326000 ms.0 from job set of time 1503482326000 ms
+2017-08-23 17:58:46,034 [streaming-job-executor-0] INFO  [org.apache.spark.SparkContext] - Starting job: foreach at streamingExample.scala:31
+2017-08-23 17:58:46,036 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Got job 5 (foreach at streamingExample.scala:31) with 2 output partitions
+2017-08-23 17:58:46,036 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Final stage: ResultStage 5 (foreach at streamingExample.scala:31)
+2017-08-23 17:58:46,036 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Parents of final stage: List()
+2017-08-23 17:58:46,037 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Missing parents: List()
+2017-08-23 17:58:46,038 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting ResultStage 5 (MapPartitionsRDD[11] at map at streamingExample.scala:30), which has no missing parents
+2017-08-23 17:58:46,042 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_5 stored as values in memory (estimated size 3.0 KB, free 413.9 MB)
+2017-08-23 17:58:46,046 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_5_piece0 stored as bytes in memory (estimated size 1842.0 B, free 413.9 MB)
+2017-08-23 17:58:46,048 [dispatcher-event-loop-0] INFO  [org.apache.spark.storage.BlockManagerInfo] - Added broadcast_5_piece0 in memory on 192.168.31.111:50752 (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:46,049 [dag-scheduler-event-loop] INFO  [org.apache.spark.SparkContext] - Created broadcast 5 from broadcast at DAGScheduler.scala:1012
+2017-08-23 17:58:46,049 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting 2 missing tasks from ResultStage 5 (MapPartitionsRDD[11] at map at streamingExample.scala:30)
+2017-08-23 17:58:46,050 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Adding task set 5.0 with 2 tasks
+2017-08-23 17:58:46,052 [dispatcher-event-loop-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 0.0 in stage 5.0 (TID 10, localhost, partition 0, ANY, 5647 bytes)
+2017-08-23 17:58:46,053 [dispatcher-event-loop-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 1.0 in stage 5.0 (TID 11, localhost, partition 1, ANY, 5647 bytes)
+2017-08-23 17:58:46,054 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Running task 1.0 in stage 5.0 (TID 11)
+2017-08-23 17:58:46,054 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Running task 0.0 in stage 5.0 (TID 10)
+2017-08-23 17:58:46,056 [Executor task launch worker-0] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 998 is the same as ending offset skipping test07 1
+2017-08-23 17:58:46,056 [Executor task launch worker-1] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 976 is the same as ending offset skipping test07 0
+2017-08-23 17:58:46,057 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 1.0 in stage 5.0 (TID 11). 756 bytes result sent to driver
+2017-08-23 17:58:46,057 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 5.0 (TID 10). 756 bytes result sent to driver
+2017-08-23 17:58:46,059 [task-result-getter-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 5.0 (TID 10) in 7 ms on localhost (1/2)
+2017-08-23 17:58:46,059 [task-result-getter-2] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 1.0 in stage 5.0 (TID 11) in 7 ms on localhost (2/2)
+2017-08-23 17:58:46,060 [task-result-getter-2] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Removed TaskSet 5.0, whose tasks have all completed, from pool 
+2017-08-23 17:58:46,060 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - ResultStage 5 (foreach at streamingExample.scala:31) finished in 0.008 s
+2017-08-23 17:58:46,060 [streaming-job-executor-0] INFO  [org.apache.spark.scheduler.DAGScheduler] - Job 5 finished: foreach at streamingExample.scala:31, took 0.026007 s
+2017-08-23 17:58:46,061 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Finished job streaming job 1503482326000 ms.0 from job set of time 1503482326000 ms
+2017-08-23 17:58:46,061 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Total delay: 0.061 s for time 1503482326000 ms (execution: 0.039 s)
+2017-08-23 17:58:46,061 [JobGenerator] INFO  [org.apache.spark.rdd.MapPartitionsRDD] - Removing RDD 9 from persistence list
+2017-08-23 17:58:46,062 [block-manager-slave-async-thread-pool-4] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 9
+2017-08-23 17:58:46,062 [JobGenerator] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Removing RDD 8 from persistence list
+2017-08-23 17:58:46,062 [block-manager-slave-async-thread-pool-1] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 8
+2017-08-23 17:58:46,063 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.ReceivedBlockTracker] - Deleting batches: 
+2017-08-23 17:58:46,063 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.InputInfoTracker] - remove old batch metadata: 1503482322000 ms
+2017-08-23 17:58:48,028 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503482328000 ms
+2017-08-23 17:58:48,029 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Starting job streaming job 1503482328000 ms.0 from job set of time 1503482328000 ms
+2017-08-23 17:58:48,037 [streaming-job-executor-0] INFO  [org.apache.spark.SparkContext] - Starting job: foreach at streamingExample.scala:31
+2017-08-23 17:58:48,039 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Got job 6 (foreach at streamingExample.scala:31) with 2 output partitions
+2017-08-23 17:58:48,039 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Final stage: ResultStage 6 (foreach at streamingExample.scala:31)
+2017-08-23 17:58:48,039 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Parents of final stage: List()
+2017-08-23 17:58:48,039 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Missing parents: List()
+2017-08-23 17:58:48,040 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting ResultStage 6 (MapPartitionsRDD[13] at map at streamingExample.scala:30), which has no missing parents
+2017-08-23 17:58:48,043 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_6 stored as values in memory (estimated size 3.0 KB, free 413.9 MB)
+2017-08-23 17:58:48,057 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_6_piece0 stored as bytes in memory (estimated size 1842.0 B, free 413.9 MB)
+2017-08-23 17:58:48,058 [dispatcher-event-loop-2] INFO  [org.apache.spark.storage.BlockManagerInfo] - Added broadcast_6_piece0 in memory on 192.168.31.111:50752 (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:48,059 [dag-scheduler-event-loop] INFO  [org.apache.spark.SparkContext] - Created broadcast 6 from broadcast at DAGScheduler.scala:1012
+2017-08-23 17:58:48,059 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting 2 missing tasks from ResultStage 6 (MapPartitionsRDD[13] at map at streamingExample.scala:30)
+2017-08-23 17:58:48,059 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Adding task set 6.0 with 2 tasks
+2017-08-23 17:58:48,060 [dispatcher-event-loop-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 0.0 in stage 6.0 (TID 12, localhost, partition 0, ANY, 5647 bytes)
+2017-08-23 17:58:48,061 [dispatcher-event-loop-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 1.0 in stage 6.0 (TID 13, localhost, partition 1, ANY, 5647 bytes)
+2017-08-23 17:58:48,061 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Running task 1.0 in stage 6.0 (TID 13)
+2017-08-23 17:58:48,061 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Running task 0.0 in stage 6.0 (TID 12)
+2017-08-23 17:58:48,063 [Executor task launch worker-0] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 998 is the same as ending offset skipping test07 1
+2017-08-23 17:58:48,063 [Executor task launch worker-1] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 976 is the same as ending offset skipping test07 0
+2017-08-23 17:58:48,064 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 1.0 in stage 6.0 (TID 13). 677 bytes result sent to driver
+2017-08-23 17:58:48,064 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 6.0 (TID 12). 677 bytes result sent to driver
+2017-08-23 17:58:48,064 [task-result-getter-0] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 1.0 in stage 6.0 (TID 13) in 3 ms on localhost (1/2)
+2017-08-23 17:58:48,065 [task-result-getter-1] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 6.0 (TID 12) in 6 ms on localhost (2/2)
+2017-08-23 17:58:48,065 [task-result-getter-1] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Removed TaskSet 6.0, whose tasks have all completed, from pool 
+2017-08-23 17:58:48,065 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - ResultStage 6 (foreach at streamingExample.scala:31) finished in 0.006 s
+2017-08-23 17:58:48,065 [streaming-job-executor-0] INFO  [org.apache.spark.scheduler.DAGScheduler] - Job 6 finished: foreach at streamingExample.scala:31, took 0.027926 s
+2017-08-23 17:58:48,066 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Finished job streaming job 1503482328000 ms.0 from job set of time 1503482328000 ms
+2017-08-23 17:58:48,066 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Total delay: 0.066 s for time 1503482328000 ms (execution: 0.037 s)
+2017-08-23 17:58:48,066 [JobGenerator] INFO  [org.apache.spark.rdd.MapPartitionsRDD] - Removing RDD 11 from persistence list
+2017-08-23 17:58:48,066 [block-manager-slave-async-thread-pool-4] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 11
+2017-08-23 17:58:48,067 [JobGenerator] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Removing RDD 10 from persistence list
+2017-08-23 17:58:48,067 [block-manager-slave-async-thread-pool-0] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 10
+2017-08-23 17:58:48,067 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.ReceivedBlockTracker] - Deleting batches: 
+2017-08-23 17:58:48,067 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.InputInfoTracker] - remove old batch metadata: 1503482324000 ms
+2017-08-23 17:58:48,070 [dispatcher-event-loop-2] INFO  [org.apache.spark.storage.BlockManagerInfo] - Removed broadcast_0_piece0 on 192.168.31.111:50752 in memory (size: 1841.0 B, free: 413.9 MB)
+2017-08-23 17:58:48,095 [dispatcher-event-loop-3] INFO  [org.apache.spark.storage.BlockManagerInfo] - Removed broadcast_1_piece0 on 192.168.31.111:50752 in memory (size: 1840.0 B, free: 413.9 MB)
+2017-08-23 17:58:48,097 [dispatcher-event-loop-0] INFO  [org.apache.spark.storage.BlockManagerInfo] - Removed broadcast_2_piece0 on 192.168.31.111:50752 in memory (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:48,098 [dispatcher-event-loop-1] INFO  [org.apache.spark.storage.BlockManagerInfo] - Removed broadcast_3_piece0 on 192.168.31.111:50752 in memory (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:48,100 [dispatcher-event-loop-2] INFO  [org.apache.spark.storage.BlockManagerInfo] - Removed broadcast_4_piece0 on 192.168.31.111:50752 in memory (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:48,102 [dispatcher-event-loop-0] INFO  [org.apache.spark.storage.BlockManagerInfo] - Removed broadcast_5_piece0 on 192.168.31.111:50752 in memory (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:50,017 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Added jobs for time 1503482330000 ms
+2017-08-23 17:58:50,018 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Starting job streaming job 1503482330000 ms.0 from job set of time 1503482330000 ms
+2017-08-23 17:58:50,023 [streaming-job-executor-0] INFO  [org.apache.spark.SparkContext] - Starting job: foreach at streamingExample.scala:31
+2017-08-23 17:58:50,024 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Got job 7 (foreach at streamingExample.scala:31) with 2 output partitions
+2017-08-23 17:58:50,024 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Final stage: ResultStage 7 (foreach at streamingExample.scala:31)
+2017-08-23 17:58:50,024 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Parents of final stage: List()
+2017-08-23 17:58:50,024 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Missing parents: List()
+2017-08-23 17:58:50,025 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting ResultStage 7 (MapPartitionsRDD[15] at map at streamingExample.scala:30), which has no missing parents
+2017-08-23 17:58:50,027 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_7 stored as values in memory (estimated size 3.0 KB, free 413.9 MB)
+2017-08-23 17:58:50,030 [dag-scheduler-event-loop] INFO  [org.apache.spark.storage.memory.MemoryStore] - Block broadcast_7_piece0 stored as bytes in memory (estimated size 1842.0 B, free 413.9 MB)
+2017-08-23 17:58:50,031 [dispatcher-event-loop-2] INFO  [org.apache.spark.storage.BlockManagerInfo] - Added broadcast_7_piece0 in memory on 192.168.31.111:50752 (size: 1842.0 B, free: 413.9 MB)
+2017-08-23 17:58:50,032 [dag-scheduler-event-loop] INFO  [org.apache.spark.SparkContext] - Created broadcast 7 from broadcast at DAGScheduler.scala:1012
+2017-08-23 17:58:50,033 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - Submitting 2 missing tasks from ResultStage 7 (MapPartitionsRDD[15] at map at streamingExample.scala:30)
+2017-08-23 17:58:50,033 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Adding task set 7.0 with 2 tasks
+2017-08-23 17:58:50,034 [dispatcher-event-loop-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 0.0 in stage 7.0 (TID 14, localhost, partition 0, ANY, 5647 bytes)
+2017-08-23 17:58:50,036 [dispatcher-event-loop-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Starting task 1.0 in stage 7.0 (TID 15, localhost, partition 1, ANY, 5647 bytes)
+2017-08-23 17:58:50,036 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Running task 1.0 in stage 7.0 (TID 15)
+2017-08-23 17:58:50,036 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Running task 0.0 in stage 7.0 (TID 14)
+2017-08-23 17:58:50,037 [Executor task launch worker-0] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 998 is the same as ending offset skipping test07 1
+2017-08-23 17:58:50,038 [Executor task launch worker-1] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Beginning offset 976 is the same as ending offset skipping test07 0
+2017-08-23 17:58:50,038 [Executor task launch worker-0] INFO  [org.apache.spark.executor.Executor] - Finished task 1.0 in stage 7.0 (TID 15). 756 bytes result sent to driver
+2017-08-23 17:58:50,038 [Executor task launch worker-1] INFO  [org.apache.spark.executor.Executor] - Finished task 0.0 in stage 7.0 (TID 14). 677 bytes result sent to driver
+2017-08-23 17:58:50,039 [task-result-getter-3] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 1.0 in stage 7.0 (TID 15) in 4 ms on localhost (1/2)
+2017-08-23 17:58:50,039 [task-result-getter-2] INFO  [org.apache.spark.scheduler.TaskSetManager] - Finished task 0.0 in stage 7.0 (TID 14) in 6 ms on localhost (2/2)
+2017-08-23 17:58:50,039 [task-result-getter-2] INFO  [org.apache.spark.scheduler.TaskSchedulerImpl] - Removed TaskSet 7.0, whose tasks have all completed, from pool 
+2017-08-23 17:58:50,039 [dag-scheduler-event-loop] INFO  [org.apache.spark.scheduler.DAGScheduler] - ResultStage 7 (foreach at streamingExample.scala:31) finished in 0.006 s
+2017-08-23 17:58:50,040 [streaming-job-executor-0] INFO  [org.apache.spark.scheduler.DAGScheduler] - Job 7 finished: foreach at streamingExample.scala:31, took 0.016557 s
+2017-08-23 17:58:50,040 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Finished job streaming job 1503482330000 ms.0 from job set of time 1503482330000 ms
+2017-08-23 17:58:50,040 [JobScheduler] INFO  [org.apache.spark.streaming.scheduler.JobScheduler] - Total delay: 0.040 s for time 1503482330000 ms (execution: 0.023 s)
+2017-08-23 17:58:50,040 [JobGenerator] INFO  [org.apache.spark.rdd.MapPartitionsRDD] - Removing RDD 13 from persistence list
+2017-08-23 17:58:50,041 [block-manager-slave-async-thread-pool-5] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 13
+2017-08-23 17:58:50,041 [JobGenerator] INFO  [org.apache.spark.streaming.kafka.KafkaRDD] - Removing RDD 12 from persistence list
+2017-08-23 17:58:50,042 [block-manager-slave-async-thread-pool-1] INFO  [org.apache.spark.storage.BlockManager] - Removing RDD 12
+2017-08-23 17:58:50,042 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.ReceivedBlockTracker] - Deleting batches: 
+2017-08-23 17:58:50,042 [JobGenerator] INFO  [org.apache.spark.streaming.scheduler.InputInfoTracker] - remove old batch metadata: 1503482326000 ms
